@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="{{ ('assets/css/style.css') }}">
     <link rel="shortcut icon" href="{{ ('assets/images/favicon.png') }}" />
 </head>
-
 <body>
     <div class="container-scroller">
         <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -83,5 +81,4 @@
     <script src="{{ ('assets/js/hoverable-collapse.js') }}"></script>
     <script src="{{ ('assets/js/misc.js') }}"></script>
 </body>
-
 </html>
