@@ -33,8 +33,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
+                                   
                                     <div class="form-group">
                                         <input id="password" type="password" placeholder="Password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
