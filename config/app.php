@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'SEAICO_ISSUE_TRACKER'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -118,8 +118,8 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-
-    'key' => env('APP_KEY'),
+    'key' => 'base64:qyS2djNtGU5mSu6aBQKeaY3ehEM76U1EOjn3JvT1VwM=',
+    //'key' => env('APP_KEY', 'base64:qyS2djNtGU5mSu6aBQKeaY3ehEM76U1EOjn3JvT1VwM='),
 
     'cipher' => 'AES-256-CBC',
 
