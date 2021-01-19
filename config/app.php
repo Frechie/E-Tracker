@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'SEAICO_ISSUE_TRACKER'),
+    'name' => env('APP_NAME', 'SeaITapp'),
 
     /*
     |--------------------------------------------------------------------------

@@ -23,16 +23,6 @@
                 </a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
-
-                <div class="search-field d-none d-md-block">
-                    <form class="d-flex align-items-center h-100" action="#">
-                        <div class="input-group">
-                            <div class="input-group-prepend bg-transparent">
-                                <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                            </div>
-                        </div>
-                    </form>
-                </div>
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -41,7 +31,7 @@
                                 <span class="availability-status online"></span>
                             </div>
                             <div class="nav-profile-text">
-                                <p class="mb-1 text-white">David Greymaax</p>
+                                <p class="mb-1 text-white">{{ Auth::user()->name }}</p>
                             </div>
                         </a>
                         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -69,46 +59,38 @@
         <!--Contents -->
 
         <div class="container-fluid page-body-wrapper">
-        <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div>
-       
+            <div class="container">
 
-            <div class="row">
-                <div class="col-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">{{ __('Verify Your Email Address') }}</div>
+                <div class="card">
+                    <div class="card-body bg-light">
+                        <article>
+                            <h5 class="card-title">
+                                {{ __('Verify Your Email Address') }}
+                            </h5>
                             <div class="card-body">
                                 @if (session('resent'))
                                 <div class="alert alert-success" role="alert">
                                     {{ __('A fresh verification link has been sent to your email address.') }}
                                 </div>
                                 @endif
-
-                                {{ __('Before proceeding, please check your email for a verification link.') }}
-                                {{ __('If you did not receive the email') }},
+                                <p>
+                                    {{ __('Before proceeding, please check your email for a verification link.') }}
+                                    {{ __('If you did not receive the email') }}, <br>
+                                </p>
+                                <p>
                                 <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                                     @csrf
-                                    <button type="submit" class="btn btn-gradient-dark btn-fw">{{ __('click here to request another') }}</button>.
+                                    <button type="submit" class="btn btn-gradient-dark btn-fw waves-effect waves-light">
+                                        {{ __('Request Another Link') }}
+                                    </button>.
                                 </form>
+                                </p>
                             </div>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>
@@ -122,7 +104,7 @@
                 All rights reserved.
             </span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center text-white">
-                Designed &apos; Developed by SeaicoTech Ltd
+                Designed &amp; Developed by SeaicoTech Ltd
             </span>
         </div>
     </footer>
