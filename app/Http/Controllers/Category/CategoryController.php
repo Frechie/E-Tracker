@@ -29,7 +29,7 @@ class CategoryController extends Controller {
             'cat_created_by_uid' => $request->user()->id
             ]);
             
-            return redirect('category');
+            return redirect('categories');
            
     }
 

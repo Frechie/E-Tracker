@@ -4,12 +4,18 @@
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body bg-light">
-      <div class="col-lg-6">    
-        <h4 class="card-title text-primary">Module/Asset Classification</h4>
+        <div class="row">
+          <div class="col-md-9">
+            <h6 class="card-title text-primary">Module/Asset Classification</h6>
+          </div>
+          <div class="col-md-3">
+            <a href="{{ route('displayCatForm') }}" class="btn btn-inverse-success btn-fw">
+            New Classes
+            <small><i class="mdi mdi-border-color"></i></small>
+            </a>
+          </div>
         </div>
-        <div class="col-lg-6">
-        <a href="{{ route('displayCatForm') }}" class="btn btn-gradient-success mr-2">Add New Asset Classes</a>
-        </div>
+        <hr>
         <table class="table table-striped">
           @if( $cat_model->count() === 0 )
           <h4 class="text-danger">Data not available!!</h4>
@@ -37,8 +43,14 @@
               </td>
               <td> {{ $category->created_at}}</td>
               <td>
-                <a href="" class="btn btn-gradient-info mr-2">Edit</a>
-                <a href="" class="btn btn-gradient-danger mr-2">Delete</a>
+                <a href="" class="btn btn-gradient-info">
+                  
+                  <small><i class="mdi mdi-border-color"></i></small>
+                </a>
+                <a href="" class="btn btn-gradient-danger">
+                  
+                  <small><i class="mdi mdi-delete"></i></small>
+                </a>
               </td>
               @endforeach
               @endif
