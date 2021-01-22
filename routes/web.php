@@ -21,3 +21,6 @@ Route::get('/hello', [App\Http\Controllers\PagesController::class, 'index']);
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/categories', [App\Http\Controllers\Category\CategoryController::class, 'index'])->name('category');
+

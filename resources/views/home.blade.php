@@ -1,7 +1,7 @@
 @extends('inc.layout')
 
 @section('content')
-<div class="content-wrapper">
+
     <div class="row">
         <div class="col-md-4 stretch-card grid-margin">
             <div class="card bg-gradient-danger card-img-holder text-white">
@@ -106,5 +106,5 @@
             </div>
         </div>
     </div>
-</div>
+
 @endsection

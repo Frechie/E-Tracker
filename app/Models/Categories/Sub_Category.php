@@ -10,7 +10,7 @@ class Sub_Category extends Model  {
 
     protected $fillable = [
         'sub_cat_name',
-        'sub_cat_descriptioin',
+        'sub_cat_description',
         'sub_cat_created_by_uid'
     ];
 }
