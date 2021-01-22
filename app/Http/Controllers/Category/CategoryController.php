@@ -9,10 +9,31 @@ use App\Models\Categories\Category;
 class CategoryController extends Controller {
     
 
-    public function index(){
+    public function showCategory(){
 
-        $count_n = Category::where('category_name', 1)->count();
+        $category = Category::all();
 
-        return view('category.category')->with('count', $count_n);
+        return view('category.category')->with('cat_model', $category);
     }
+
+    public function showCatForm(){
+        return view('category.add-category');
+    }
+    
+
+    public function saveCategory (Request $request){
+
+        $cat = Category::create([
+            'category_name' => $request->input('cat_name'),
+            'category_description' => $request->input('cat_desc'),
+            'cat_created_by_uid' => $request->user()->id
+            ]);
+            
+            return redirect('category');
+           
+    }
+
+
+    
+
 }

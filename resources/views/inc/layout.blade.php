@@ -223,7 +223,7 @@
               All rights reserved.
             </span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-              Designed &apos; Developed by SeaicoTech Ltd
+              Designed &amp; Developed by SeaicoTech Ltd
             </span>
           </div>
         </footer>

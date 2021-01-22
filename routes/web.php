@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,11 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/categories', [App\Http\Controllers\Category\CategoryController::class, 'index'])->name('category');
+Route::get('/categories', [App\Http\Controllers\Category\CategoryController::class, 'showCategory'])->name('category');
+
+Route::get('/add_category', [App\Http\Controllers\Category\CategoryController::class, 'showCatForm'])->name('displayCatForm');
+
+Route::post('/add_category', [App\Http\Controllers\Category\CategoryController::class, 'saveCategory'])->name('saveCatForm');
+
+
 

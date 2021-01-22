@@ -1,116 +1,51 @@
 @extends('inc.layout')
 
 @section('content')<div class="row">
-<div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Module/Assest Classification</h4>
-                    <p class="card-description">  <code></code>
-                    </p>
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th> Name </th>
-                          <th> Description </th>
-                          <th> Created By </th>
-                          <th> Creation Date</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../assets/images/faces-clipart/pic-1.png" alt="image" />
-                          </td>
-                          <td> Herman Beck </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td> May 15, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../assets/images/faces-clipart/pic-2.png" alt="image" />
-                          </td>
-                          <td> Messsy Adam </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                        
-                          <td> July 1, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../assets/images/faces-clipart/pic-3.png" alt="image" />
-                          </td>
-                          <td> John Richards </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          
-                          <td> Apr 12, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../assets/images/faces-clipart/pic-4.png" alt="image" />
-                          </td>
-                          <td> Peter Meggik </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          
-                          <td> May 15, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../assets/images/faces-clipart/pic-1.png" alt="image" />
-                          </td>
-                          <td> Edward </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          
-                          <td> May 03, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../assets/images/faces-clipart/pic-2.png" alt="image" />
-                          </td>
-                          <td> John Doe </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          
-                          <td> April 05, 2015 </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="../../assets/images/faces-clipart/pic-3.png" alt="image" />
-                          </td>
-                          <td> Henry Tom </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          
-                          <td> June 16, 2015 </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              </div>
-    @endsection
+  <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body bg-light">
+      <div class="col-lg-6">    
+        <h4 class="card-title text-primary">Module/Asset Classification</h4>
+        </div>
+        <div class="col-lg-6">
+        <a href="{{ route('displayCatForm') }}" class="btn btn-gradient-success mr-2">Add New Asset Classes</a>
+        </div>
+        <table class="table table-striped">
+          @if( $cat_model->count() === 0 )
+          <h4 class="text-danger">Data not available!!</h4>
+          <a href="{{ route('displayCatForm') }}" class="btn btn-info text-white">Add Asset Class</a>
+          @else
+          <thead>
+            <tr>
+              <th class="text-center"> Name </th>
+              <th class="text-center"> Description </th>
+              <th class="text-center"> Created By </th>
+              <th class="text-center"> Creation Date</th>
+              <th class="text-center"> Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($cat_model as $category)
+            <tr>
+              <td class="py-1">
+                {{ $category->category_name }}
+              </td>
+              <td class="text-wrap">
+                {{ $category->category_description }}
+              </td>
+              <td>{{ $category->id }}
+              </td>
+              <td> {{ $category->created_at}}</td>
+              <td>
+                <a href="" class="btn btn-gradient-info mr-2">Edit</a>
+                <a href="" class="btn btn-gradient-danger mr-2">Delete</a>
+              </td>
+              @endforeach
+              @endif
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
