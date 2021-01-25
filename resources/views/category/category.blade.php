@@ -2,6 +2,22 @@
 
 @section('content')<div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12 grid-margin">
+    @if(session()->has('successMessage'))
+    <div class="alert alert-success">
+     <h5 class="text-success">{{ session()->get('successMessage') }}</h5> 
+    </div>
+    @endif
+    @if(session()->has('deletionMessage'))
+    <div class="alert alert-danger">
+     <h5 class="text-danger">{{ session()->get('deletionMessage') }}</h5> 
+    </div>
+    @endif
+    @if(session()->has('newCategoryMessage'))
+    <div class="alert alert-info">
+     <h5 class="text-info">{{ session()->get('newCategoryMessage') }}</h5> 
+    </div>
+    @endif
+    
     <div class="card">
       <div class="card-body bg-light">
         <div class="row">
@@ -22,7 +38,7 @@
           <a href="{{ route('displayCatForm') }}" class="btn btn-info text-white">Add Asset Class</a>
           @else
           <thead>
-            <tr class="col-sm-12">
+            <tr class="col-sm-12 bg-dark text-white">
               <th class="text-center"> Name </th>
               <th class="text-center"> Description </th>
               <th class="text-center"> Created By </th>
@@ -45,9 +61,9 @@
               <td>
                 <a href="{{ url('/edit_category') }}/{{ $category->id }} " class="">
                   <i class="mdi mdi-border-color"></i>
-                </a>              
-                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">
-                <i class="mdi mdi-delete text-danger"></i>
+                </a>
+                <a class="waves-effect waves-light btn modal-trigger" href="{{ url('/delete_category') }}/{{ $category->id }}">
+                  <i class="mdi mdi-delete text-danger"></i>
                 </a>
               </td>
               @endforeach

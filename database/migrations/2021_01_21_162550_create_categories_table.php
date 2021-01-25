@@ -15,7 +15,7 @@ class CreateCategoriesTable extends Migration {
             $table->id();
             $table->string('category_name');
             $table->string('category_description');
-            $table->integer('cat_created_by_uid');
+            $table->string('cat_created_by_uid');
             $table->timestamps();
         });
     }

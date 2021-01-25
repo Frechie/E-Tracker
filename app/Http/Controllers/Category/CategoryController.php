@@ -26,10 +26,10 @@ class CategoryController extends Controller {
         $cat = Category::create([
             'category_name' => $request->input('cat_name'),
             'category_description' => $request->input('cat_desc'),
-            'cat_created_by_uid' => $request->user()->id
+            'cat_created_by_uid' => $request->user()->email
             ]);
             
-            return redirect('categories');           
+            return redirect('categories')->with('newCategoryMessage', 'Successfully created '.$request->input('cat_name'));           
     }
 
 
@@ -51,6 +51,24 @@ class CategoryController extends Controller {
 
         $catToUpdate->save();
 
-        return redirect('categories');  
+        return redirect('categories')->with('successMessage', 'Successfully Updated '.$catToUpdate->category_name);  
     }
+
+    public function showDeletionteForm(Request $request){
+
+        $data = Category::find($request->id);
+
+        return view('category.delete-category')->with('deleteCategory', $data);
+    }
+
+    public function deleteCategory(Request $request){
+
+        $catTodelete = Category::find($request->id);
+
+        $catTodelete->delete();
+
+        return redirect('categories')->with('deletionMessage', 'Successfully deleted '.$catTodelete->category_name);
+
+    }
+    
 }
