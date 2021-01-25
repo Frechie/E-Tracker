@@ -9,12 +9,12 @@
                 <form class="" method="POST" action="{{ route('saveCatForm') }}">
                 @csrf
                     <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
-                        <input type="text" class="form-control" name="cat_name" id="exampleInputName1" placeholder="Name" required autofocus>
+                        <label for="categoryName">Name</label>
+                        <input type="text" class="form-control" name="cat_name" id="categoryName" placeholder="Name" required autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="exampleTextarea1">Description</label>
-                        <textarea class="form-control" name="cat_desc" id="exampleTextarea1" rows="4" placeholder="Describe the Asset Class above" required autofocus>
+                        <label for="categoryDescription">Description</label>
+                        <textarea class="form-control" name="cat_desc" id="categoryDescription" rows="4" placeholder="Describe the Asset Class above" required autofocus>
                         </textarea>
                       </div>
                     <button type="submit" class="btn btn-gradient-primary mr-2">Create</button>

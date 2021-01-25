@@ -29,11 +29,28 @@ class CategoryController extends Controller {
             'cat_created_by_uid' => $request->user()->id
             ]);
             
-            return redirect('categories');
-           
+            return redirect('categories');           
     }
 
 
-    
+    public function showCatUpdateForm(Request $request){
+        
+        $data = Category::find($request->id);
 
+        return view('category.edit-category')->with('categoryToUpdate', $data);
+
+    }
+    
+    public function updateCategory(Request $request){
+
+        $catToUpdate = Category::find($request->id);
+
+        $catToUpdate->category_name = $request->input('cat_name');
+        $catToUpdate->category_description = $request->input('cat_desc');
+        //$catToUpdate->cat_created_by_uid = $request->user()->id;
+
+        $catToUpdate->save();
+
+        return redirect('categories');  
+    }
 }

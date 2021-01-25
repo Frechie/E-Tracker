@@ -29,5 +29,9 @@ Route::get('/add_category', [App\Http\Controllers\Category\CategoryController::c
 
 Route::post('/add_category', [App\Http\Controllers\Category\CategoryController::class, 'saveCategory'])->name('saveCatForm');
 
+Route::get('/edit_category/{id}', [App\Http\Controllers\Category\CategoryController::class, 'showCatUpdateForm'])->name('displayCatUpdateForm');
+
+Route::post('/edit_category/{id}', [App\Http\Controllers\Category\CategoryController::class, 'updateCategory'])->name('updateCategory');
+
 
 
