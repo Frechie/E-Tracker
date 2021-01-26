@@ -38,5 +38,7 @@ Route::get('/delete_category/{id}', [App\Http\Controllers\Category\CategoryContr
 
 Route::post('/delete_category/{id}', [App\Http\Controllers\Category\CategoryController::class, 'deleteCategory']);
 
+Route::get('/profile', [App\Http\Controllers\Profile\ProfileController::class, 'showProfile'])->name('profile');
+
 
 

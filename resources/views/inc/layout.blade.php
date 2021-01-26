@@ -23,7 +23,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link" id="profileDropdown" href="{{ route('profile') }}">
               <div class="nav-profile-img">
                 <img src="{{ asset('assets/images/faces/face1.jpg') }}" alt="image">
                 <span class="availability-status online"></span>
@@ -32,18 +32,17 @@
                 <p class="mb-1 text-dark">{{ Auth::user()->name }}</p>
               </div>
             </a>
-            <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="#">
-                <i class="mdi mdi-cached mr-2 text-dark"></i>{{ Auth::user()->email }}</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="mdi mdi-logout mr-2 text-dark"></i>{{ __('Logout') }}
+          </li>
+          <li class="nav-item nav-logout d-none d-lg-block">
+          
+          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+          <i class="mdi mdi-logout text-danger"></i>
               </a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
               </form>
-            </div>
-          </li>
+              
+            </li>
           <li class="nav-item d-none d-lg-block full-screen-link">
             <a class="nav-link">
               <i class="mdi mdi-fullscreen text-dark" id="fullscreen-button"></i>
@@ -197,14 +196,14 @@
         <div class="content-wrapper">
           @yield('content')
         </div>
-        <footer class="footer">
+        <footer class="footer bg-white font-weight-bold">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-center text-muted text-sm-left d-block d-sm-inline-block">
-              Copyright © 2021
-              <a class="text-dark" href="https://www.seaicotechnologies.com/" target="_blank">Seaico Technologies Limited</a>
+            <span class="text-center text-primary text-sm-left d-block d-sm-inline-block">
+              Copyright © {{ date('Y') }}
+              <a class="text-info" href="https://www.seaicotechnologies.com/" target="_blank">Seaico Technologies Limited</a>
               All rights reserved.
             </span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center text-success">
               Designed &amp; Developed by SeaicoTech Ltd
             </span>
           </div>
