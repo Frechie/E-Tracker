@@ -6,8 +6,13 @@
             <div class="card card-outline">
                 <div class="card-body box-profile">
                     <div class="text-center">
+                   
                         <img class="rounded-circle img-fluid w-100" src="{{ asset('assets/images/faces/face1.jpg') }}" alt="image">
+                        
                     </div>
+                    <a href="" class="">
+                    <i class="mdi mdi-border-color left-align"></i>
+                    </a>
                     <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
 
                     <p class="text-muted text-center">Technical Analyst</p>

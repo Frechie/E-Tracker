@@ -62,7 +62,7 @@
                 </td>
                 <td> {{ $category->created_at}}</td>
                 <td>
-                  <a href="{{ url('/categories') }}/{{ $category->id}}/edit" class="">
+                  <a href="{{ url('/categories') }}/{{ $category->id }}/edit" class="">
                     <i class="mdi mdi-border-color"></i>
                   </a>
                   <a class="waves-effect waves-light btn modal-trigger" href="{{ url('/categories') }}/{{ $category->id }}">
