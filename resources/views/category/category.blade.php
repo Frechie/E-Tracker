@@ -27,7 +27,7 @@
             <h5 class="card-title text-info">Module/Asset Classification</h5>
           </div>
           <div class="col-md-3 col-sm-12">
-            <a href="{{ route('displayCatForm') }}" class="btn btn-success btn-fw">
+            <a href="{{ url('/categories/create') }}" class="btn btn-success btn-fw">
               New Classes
               <small><i class="mdi mdi-border-color"></i></small>
             </a>
@@ -38,7 +38,7 @@
           <table class="table table-striped ">
             @if( $cat_model->count() === 0 )
             <h4 class="text-danger">Data not available!!</h4>
-            <a href="{{ route('displayCatForm') }}" class="btn btn-info text-white">Add Asset Class</a>
+            <a href="" class="btn btn-info text-white">Add Asset Class</a>
             @else
             <thead>
               <tr class="col-sm-12 bg-dark text-white">
@@ -62,10 +62,10 @@
                 </td>
                 <td> {{ $category->created_at}}</td>
                 <td>
-                  <a href="{{ url('/edit_category') }}/{{ $category->id }} " class="">
+                  <a href="{{ url('/categories') }}/{{ $category->id}}/edit" class="">
                     <i class="mdi mdi-border-color"></i>
                   </a>
-                  <a class="waves-effect waves-light btn modal-trigger" href="{{ url('/delete_category') }}/{{ $category->id }}">
+                  <a class="waves-effect waves-light btn modal-trigger" href="{{ url('/categories') }}/{{ $category->id }}">
                     <i class="mdi mdi-delete text-danger"></i>
                   </a>
                 </td>

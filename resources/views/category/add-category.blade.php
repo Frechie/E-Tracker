@@ -7,7 +7,7 @@
             <div class="card-body bg-light">
                 <h4 class="card-title"> Create New Assest Classes</h4>
                 <p class="card-description"> Ensure the class is well known by adding description</p>
-                <form class="" method="POST" action="{{ route('saveCatForm') }}">
+                <form class="" method="POST" action="{{ url('/categories') }}">
                     @csrf
                     <div class="form-group">
                         <label for="categoryName">Name</label>

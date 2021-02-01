@@ -152,7 +152,7 @@
               <i class="mdi mdi-home menu-icon text-white"></i>
             </a>
           </li>          <li class="nav-item">
-            <a class="nav-link" href="{{ route('category') }}">
+            <a class="nav-link" href="{{ url('categories') }}">
               <span class="menu-title">Categories </span>
               <i class="mdi mdi-format-list-bulleted menu-icon text-white"></i>
             </a>
