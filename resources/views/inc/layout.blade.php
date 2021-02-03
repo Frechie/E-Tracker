@@ -171,7 +171,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ url('/issues') }}">
               <span class="menu-title">Issues</span>
               <i class="mdi mdi-format-list-bulleted menu-icon text-white"></i>
             </a>
