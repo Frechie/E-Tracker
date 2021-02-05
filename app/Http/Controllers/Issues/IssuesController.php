@@ -35,11 +35,22 @@ class IssuesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+
         //Retrieve user input 
-        $issue_desc = $request->input('issue_desc');
-        $issue_asset_class = $request->input('asset_class');
-        $issue_category = $request->input('issue_cat');
-        $issue_severity = $request->input('issue_severity');
+        $data = [
+        'issue_desc' => $request->input('issue_desc'),
+        'issue_asset_class' => $request->input('asset_class'),
+        'issue_category' => $request->input('issue_cat'),
+        'issue_severity' => $request->input('issue_severity'),
+
+
+        'upload' =>  $request->file('issue_upload')->getClientOriginalName(),
+        'uploadExt' => $request->file('issue_upload')->extension(),
+
+        'path' => $request->file('issue_upload')->store('issues/'.$request->user()->name)
+        ];
+
+        return $data;
     }
 
     /**

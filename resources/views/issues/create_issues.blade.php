@@ -9,7 +9,7 @@
         <h3 class="card-description text-info">
           What issue are you experiencing?
         </h3>
-        <form class="forms-sample" method="POST" action="{{ url('/issues') }}">
+        <form class="forms-sample" method="POST" action="{{ url('/issues') }}" enctype="multipart/form-data">
           @csrf
 
           <div class="row">
@@ -69,7 +69,7 @@
               <div class="form-group">
                 <label>Add log files </label>
                 <div class="input-group col-xs-12">
-                  <input type="file" name="logFile" class="form-control" placeholder="Log Files accepted format(.log, .zip,, .png, .jpg .txt)... " required>
+                  <input type="file" name="issue_upload" class="form-control" placeholder="Log Files accepted format(.log, .zip,, .png, .jpg .txt)... " required>
                 </div>
               </div>
             </div>
