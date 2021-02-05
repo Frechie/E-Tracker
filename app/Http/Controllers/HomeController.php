@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Issues\Issue;
 
 class HomeController extends Controller
 {
@@ -11,8 +12,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct()    {
         $this->middleware(['auth', 'verified']);
     }
 
@@ -21,8 +21,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
+    public function index()  {
+
+        $new_issues = Issue::where('issue_status', 'NEW')->count();
+
+        return view('home')->with([
+            'new_issues' => $new_issues
+        ]);
     }
 }

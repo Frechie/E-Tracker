@@ -9,8 +9,8 @@
                 <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
                 <h4 class="font-weight-bold mb-3">New Issues <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                 </h4>
-                <h2 class="mb-5 text-center">8</h2>
-                <h6 class="card-text">Decreased by 10%</h6>
+                <h1 class="mb-5 text-center">{{ $new_issues }}</h1>
+                <h6 class="card-text"></h6>
             </div>
         </div>
     </div>

@@ -6,8 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Categories\Category;
 use Illuminate\Http\Request;
 
-class CategoriesController extends Controller
-{
+class CategoriesController extends Controller {
+    
+    public function __construct()    {
+        $this->middleware(['auth', 'verified']);
+    }
+
     /**
      * Display a listing of the resource.
      *

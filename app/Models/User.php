@@ -43,11 +43,11 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     public function categories(){
-        $this->hasMany(Category::class, 'cat_created_by_uid');
+       return  $this->hasMany(Category::class, 'cat_created_by_uid');
     }
 
     public function issues(){
-        $this->hasMany(Issue::class, 'issue_raised_by_uid');
+        return $this->hasMany(Issue::class, 'issue_raised_by_uid');
     }
 
 }

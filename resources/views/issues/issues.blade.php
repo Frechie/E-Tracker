@@ -13,7 +13,7 @@
                 <h4 class="card-title">Recent Issues</h4>
                 <div class="table-responsive">
                     <table class="table table-hover table-striped">
-                        <thead>
+                        <thead class="bg-primary text-white">
                             <tr>
                                 <th> Issue ID </th>
                                 <th> Created By </th>
@@ -26,9 +26,9 @@
                         <tbody>
                             @foreach($issuesRecords as $issue)
                             <tr>
-                                <td> {{ date('ymd').'-'.$issue->id}} </td>
+                                <td><a href="{{ url('/issues') }}/{{$issue->id }}"> {{ date('ymd').'-'.$issue->id}}</a> </td>
                                 <td>
-                                   David Grey
+                                   {{ $issue->user->name}}
                                 </td>
                                 <td> {{ $issue->issue_subject }}</td>
                                 <td>

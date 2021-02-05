@@ -8,8 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 
-class IssuesController extends Controller
-{
+class IssuesController extends Controller {
+
+    public function __construct()    {
+        $this->middleware(['auth', 'verified']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -80,9 +83,11 @@ class IssuesController extends Controller
      * @param  \App\Models\Issues\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function show(Issue $issue)
-    {
-        //
+    public function show($id) {
+        $issue = Issue::find($id);
+
+        return $issue;
+      
     }
 
     /**

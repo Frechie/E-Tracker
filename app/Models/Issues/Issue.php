@@ -21,6 +21,6 @@ class Issue extends Model {
     ];
 
     public function user(){
-        $this->belongsTo(User::class);
+       return $this->belongsTo(User::class, 'issue_raised_by_uid');
     }
 }
