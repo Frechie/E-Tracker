@@ -13,6 +13,15 @@
           @csrf
 
           <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="form-group">
+                <label for="subject text-bold">Subject</label>
+                <input type="text" class="form-control text-dark" id="subject" name="issue_subject" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
             <div class="col-lg-6 col-md-6">
               <div class="form-group">
                 <label for="category" class="text-dark">Select an Asset Class</label>
@@ -42,7 +51,7 @@
 
           <div class="form-group">
             <label for="issue_description" class="text-dark">
-              Kindly explain the issues you have here?
+              <strong>Explain the issues you have here?</strong>
             </label>
             <textarea name="issue_desc" class="form-control" id="issue_description" rows="8" required>
 

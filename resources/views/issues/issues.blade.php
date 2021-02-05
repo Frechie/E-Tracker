@@ -12,61 +12,32 @@
             <div class="card-body">
                 <h4 class="card-title">Recent Issues</h4>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th> Assignee </th>
+                                <th> Issue ID </th>
+                                <th> Created By </th>
                                 <th> Subject </th>
                                 <th> Status </th>
-                                <th> Last Update </th>
-                                <th> Issue ID </th>
+                                <th> Date Created </th>
+
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($issuesRecords as $issue)
                             <tr>
+                                <td> {{ date('ymd').'-'.$issue->id}} </td>
                                 <td>
-                                    <img src="{{ asset('assets/images/faces/face1.jpg') }}" class="mr-2" alt="image"> David Grey
+                                   David Grey
                                 </td>
-                                <td> Fund is not recieved </td>
+                                <td> {{ $issue->issue_subject }}</td>
                                 <td>
-                                    <label class="badge badge-gradient-success">Done</label>
+                                    <label class="badge badge-gradient-info">{{ $issue->issue_status}}</label>
                                 </td>
-                                <td> Dec 5, 2017 </td>
-                                <td> WD-12345 </td>
+                                <td> {{$issue->created_at}} </td>
+
                             </tr>
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('assets/images/faces/face2.jpg') }}" class="mr-2" alt="image"> Stella Johnson
-                                </td>
-                                <td> High loading time </td>
-                                <td>
-                                    <label class="badge badge-gradient-warning">In-Progress</label>
-                                </td>
-                                <td> Dec 12, 2017 </td>
-                                <td> WD-12346 </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('assets/images/faces/face3.jpg') }}" class="mr-2" alt="image"> Marina Michel
-                                </td>
-                                <td> Website down for one week </td>
-                                <td>
-                                    <label class="badge badge-gradient-info">On-Hold</label>
-                                </td>
-                                <td> Dec 16, 2017 </td>
-                                <td> WD-12347 </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('assets/images/faces/face4.jpg') }}" class="mr-2" alt="image"> John Doe
-                                </td>
-                                <td> Loosing control on server </td>
-                                <td>
-                                    <label class="badge badge-gradient-danger">Rejected</label>
-                                </td>
-                                <td> Dec 3, 2017 </td>
-                                <td> WD-12348 </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

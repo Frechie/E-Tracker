@@ -25,7 +25,7 @@
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link" id="profileDropdown" href="{{ route('profile') }}">
               <div class="nav-profile-img">
-                <img src="{{ asset('assets/images/faces/face1.jpg') }}" alt="image">
+                <img src="{{ asset('storage/issues/Frechie/FredPassPort_1612540115.png') }}" alt="image">
                 <span class="availability-status online"></span>
               </div>
               <div class="nav-profile-text">

@@ -14,7 +14,9 @@ class CreateIssuesTable extends Migration
     public function up()
     {
         Schema::create('issues', function (Blueprint $table) {
+
             $table->id();
+            $table->text('issue_subject');
             $table->text('issue_description');
             $table->integer('issue_raised_by_uid');
             $table->string('issue_category');
@@ -31,8 +33,7 @@ class CreateIssuesTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down()  {
         Schema::dropIfExists('issues');
     }
 }

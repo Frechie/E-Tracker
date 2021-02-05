@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Issues\Issue;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -42,6 +43,11 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     public function categories(){
-        $this->hasMany('Category::class', 'cat_created_by_uid');
+        $this->hasMany(Category::class, 'cat_created_by_uid');
     }
+
+    public function issues(){
+        $this->hasMany(Issue::class, 'issue_raised_by_uid');
+    }
+
 }

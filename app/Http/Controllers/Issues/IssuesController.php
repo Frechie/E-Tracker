@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Issues;
 use App\Http\Controllers\Controller;
 use App\Models\Issues\Issue;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class IssuesController extends Controller
 {
@@ -36,21 +38,40 @@ class IssuesController extends Controller
      */
     public function store(Request $request) {
 
-        //Retrieve user input 
-        $data = [
-        'issue_desc' => $request->input('issue_desc'),
-        'issue_asset_class' => $request->input('asset_class'),
-        'issue_category' => $request->input('issue_cat'),
-        'issue_severity' => $request->input('issue_severity'),
+        $filenameToStore = '';
+
+        if ($request->hasFile('issue_upload')){
 
 
-        'upload' =>  $request->file('issue_upload')->getClientOriginalName(),
-        'uploadExt' => $request->file('issue_upload')->extension(),
+        $upload =  $request->file('issue_upload')->getClientOriginalName();
+        $fileName = pathinfo($upload, PATHINFO_FILENAME);
+        $uploadExt = $request->file('issue_upload')->extension();
 
-        'path' => $request->file('issue_upload')->store('issues/'.$request->user()->name)
-        ];
+        $filenameToStore = $fileName.'_'.time().'.'.$uploadExt;
+        
+        }
 
-        return $data;
+        $user = $request->user()->name;
+        
+        $issue = Issue::create([
+
+            'issue_description' => $request->input('issue_desc'),
+            'issue_category'  => $request->input('asset_class'),
+            'issue_sub_category'  => $request->input('issue_cat'),
+            'severity'  => $request->input('issue_severity'),
+            'issue_uploads'  => 'storage/issues/'.$user.'/'.$filenameToStore,
+            'issue_raised_by_uid' => $request->user()->id,
+            'issue_status' => 'NEW',
+            'issue_subject' => $request->input('issue_subject')
+        ]);
+
+        if ($issue){
+            $request->file('issue_upload')->storeAs('issues/'.$user, $filenameToStore);
+        }
+        //Retrieve  user input 
+        return redirect('issues');
+
+       
     }
 
     /**
