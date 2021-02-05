@@ -40,4 +40,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function categories(){
+        $this->hasMany('Category::class', 'cat_created_by_uid');
+    }
 }

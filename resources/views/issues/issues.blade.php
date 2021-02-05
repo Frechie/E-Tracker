@@ -2,78 +2,77 @@
 
 @section('content')
 
+@if( $issuesRecords->count() === 0 )
+<h4 class="text-danger">No available data found!!</h4>
+@else
+
 <div class="row">
-  <div class="col-md-12 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body bg-secondary">
-        <!-- <h4 class="card-title">Default form</h4> -->
-        <p class="card-description"> Kindly fill in your personal information as required </p>
-        <form class="forms-sample">
-
-        <div class="form-group">
-                      <label for="exampleFormControlSelect3">Issue Category</label>
-                      <select class="form-control form-control-sm" id="exampleFormControlSelect3">
-                        <option>Technical</option>
-                        <option>Front Office</option>
-                        <option>Back office</option>
-                        <option>ALM</option>
-                        <option>Others</option>
-                      </select>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="exampleFormControlSelect2">Issue Severity</label>
-                      <select class="form-control" id="exampleFormControlSelect2">
-                        <option>P1</option>
-                        <option>P2</option>
-                        <option>P3</option>
-                        <option>P4</option>
-                        <option>P5</option>
-                      </select>
-                    </div>
-            
-
-          <div class="form-group">
-            <label for="exampleSelectGender"> Are you a Seico Consultant ? </label>
-            <select class="form-control" id="exampleSelectGender">
-              <option>Yes</option>
-              <option>No</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="exampleTextarea1">Kindly explain the issues you have here?</label>
-            <textarea class="form-control" id="exampleTextarea1" rows="8"></textarea>
-          </div>
-
-          <div class="form-group">
-                        <label>Upload issue log files and screenshoot </label>
-                        <input type="file" name="img[]" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info btn-light" disabled placeholder="Log files and screen shot">
-                          <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-light" type="button">Upload</button>
-                          </span>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label>Upload issue log files and screenshoot </label>
-                        <input type="file" name="img[]" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info btn-light" disabled placeholder="Log files and screen shot">
-                          <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-light" type="button">Upload</button>
-                          </span>
-                        </div>
-                      </div>
-
-          <button type="submit" class="btn btn-light mr-2">Submit</button>
-          <button class="btn btn-light">Cancel</button>
-        </form>
-      </div>
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Recent Issues</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th> Assignee </th>
+                                <th> Subject </th>
+                                <th> Status </th>
+                                <th> Last Update </th>
+                                <th> Issue ID </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="{{ asset('assets/images/faces/face1.jpg') }}" class="mr-2" alt="image"> David Grey
+                                </td>
+                                <td> Fund is not recieved </td>
+                                <td>
+                                    <label class="badge badge-gradient-success">Done</label>
+                                </td>
+                                <td> Dec 5, 2017 </td>
+                                <td> WD-12345 </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="{{ asset('assets/images/faces/face2.jpg') }}" class="mr-2" alt="image"> Stella Johnson
+                                </td>
+                                <td> High loading time </td>
+                                <td>
+                                    <label class="badge badge-gradient-warning">In-Progress</label>
+                                </td>
+                                <td> Dec 12, 2017 </td>
+                                <td> WD-12346 </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="{{ asset('assets/images/faces/face3.jpg') }}" class="mr-2" alt="image"> Marina Michel
+                                </td>
+                                <td> Website down for one week </td>
+                                <td>
+                                    <label class="badge badge-gradient-info">On-Hold</label>
+                                </td>
+                                <td> Dec 16, 2017 </td>
+                                <td> WD-12347 </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="{{ asset('assets/images/faces/face4.jpg') }}" class="mr-2" alt="image"> John Doe
+                                </td>
+                                <td> Loosing control on server </td>
+                                <td>
+                                    <label class="badge badge-gradient-danger">Rejected</label>
+                                </td>
+                                <td> Dec 3, 2017 </td>
+                                <td> WD-12348 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-
-  @endsection
+</div>
+@endif
+@endsection

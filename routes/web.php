@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Category\CategoriesController;
+use App\Http\Controllers\Issues\IssuesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/issues', function(){
-    return view('issues.issues');
-});
-
 Route::get('/hello', [App\Http\Controllers\PagesController::class, 'index']);
 
 Auth::routes(['verify' => true]);
@@ -33,3 +30,5 @@ Route::get('/profile', [App\Http\Controllers\Profile\ProfileController::class, '
 
 
 Route::resource('categories', CategoriesController::class);
+
+Route::resource('issues', IssuesController::class);

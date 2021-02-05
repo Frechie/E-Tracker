@@ -20,6 +20,7 @@ class CreateIssuesTable extends Migration
             $table->string('issue_category');
             $table->string('issue_sub_category');
             $table->string('issue_status');
+            $table->string('severity');
             $table->string('issue_uploads');
             $table->timestamps();
         });
