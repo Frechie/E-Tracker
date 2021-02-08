@@ -1,16 +1,17 @@
 @extends('inc.layout')
-
 @section('content')
 
 <div class="row">
     <div class="col-lg-3 col-md-6 stretch-card grid-margin">
         <div class="card bg-info card-img-holder text-white">
             <div class="card-body">
-                <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-bold mb-3">New Issues <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
-                </h4>
-                <h1 class="mb-5 text-center">{{ $new_issues }}</h1>
-                <h6 class="card-text"></h6>
+                <a class="text-white" href="{{ url('/dashboard/new') }}">
+                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-bold mb-3">New Issues <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h1 class="mb-5 text-center">{{ $new_issues }}</h1>
+                    <h6 class=""> View Issues </h6>
+                </a>
             </div>
         </div>
     </div>
@@ -18,11 +19,13 @@
     <div class="col-lg-3 col-md-6 stretch-card grid-margin">
         <div class="card bg-danger card-img-holder text-white">
             <div class="card-body">
-                <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-bold mb-3">Outstanding Issues <i class="mdi mdi-chart-line mdi-24px float-right"></i>
-                </h4>
-                <h2 class="mb-5 text-center">12</h2>
-                <h6 class="card-text">Increased by 60%</h6>
+                <a class="text-white" href="{{ url('/dashboard/oustanding') }}">
+                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-bold mb-3">Outstanding Issues <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5 text-center">12</h2>
+                    <h6 class="card-text">Increased by 60%</h6>
+                </a>
             </div>
         </div>
     </div>
@@ -30,11 +33,13 @@
     <div class="col-lg-3 col-md-6 stretch-card grid-margin">
         <div class="card bg-success card-img-holder text-white">
             <div class="card-body">
-                <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-bold mb-3">Resolved Issues <i class="mdi mdi-diamond mdi-24px float-right"></i>
-                </h4>
-                <h2 class="mb-5 text-center">30</h2>
-                <h6 class="card-text">Increased by 5%</h6>
+                <a class="text-white" href="{{ url('/dashboard/oustanding') }}">
+                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-bold mb-3">Resolved Issues <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5 text-center">30</h2>
+                    <h6 class="card-text">Increased by 5%</h6>
+                </a>
             </div>
         </div>
     </div>
@@ -50,7 +55,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <div class="row">

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Issues;
 use App\Http\Controllers\Controller;
 use App\Models\Issues\Issue;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 
 class IssuesController extends Controller {
@@ -86,7 +85,9 @@ class IssuesController extends Controller {
     public function show($id) {
         $issue = Issue::find($id);
 
-        return $issue;
+       // return $issue;
+
+        return view('issues.issue')->with('issue', $issue);
       
     }
 

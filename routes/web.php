@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Category\CategoriesController;
 use App\Http\Controllers\Issues\IssuesController;
+use Illuminate\Http\Request;
+use App\Models\Issues\Issue;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +22,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', [App\Http\Controllers\PagesController::class, 'index']);
+Route::get('/dashboard/{type}', function (Request $request) {
+
+    $requestTyoe = $request->type;
+
+    $issueType = Issue::where('issue_status', $requestTyoe)->get();
+
+    return view('issues.dashboard-issues')->with(['issues_type' => $issueType, 'requestType' => $requestTyoe ]);
+});
 
 Auth::routes(['verify' => true]);
 
