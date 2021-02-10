@@ -21,9 +21,10 @@
             <div class="card-body">
                 <a class="text-white" href="{{ url('/dashboard/oustanding') }}">
                     <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-bold mb-3">Outstanding Issues <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    <h4 class="font-weight-bold mb-3">Work in Progress
+                     <i class="mdi mdi-chevron-double-right mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5 text-center">12</h2>
+                    <h2 class="mb-5 text-center">{{ $oustandingIssues }}</h2>
                     <h6 class="card-text">Increased by 60%</h6>
                 </a>
             </div>
@@ -35,9 +36,11 @@
             <div class="card-body">
                 <a class="text-white" href="{{ url('/dashboard/oustanding') }}">
                     <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-bold mb-3">Resolved Issues <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                    <h4 class="font-weight-bold mb-3">
+                    Resolved Issues 
+                    <i class="mdi mdi-checkbox-multiple-marked-circle mdi-24px float-right"></i>
                     </h4>
-                    <h2 class="mb-5 text-center">30</h2>
+                    <h2 class="mb-5 text-center">{{ $completedIssues }} </h2>
                     <h6 class="card-text">Increased by 5%</h6>
                 </a>
             </div>
@@ -45,12 +48,13 @@
     </div>
 
     <div class="col-lg-3 col-md-6 stretch-card grid-margin">
-        <div class="card bg-warning card-img-holder text-white">
+        <div class="card bg-primary card-img-holder text-white">
             <div class="card-body">
                 <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-bold mb-3">Total Issues <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                <h4 class="font-weight-bold mb-3">Total Issues 
+                <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                 </h4>
-                <h2 class="mb-5 text-center">50</h2>
+                <h2 class="mb-5 text-center">{{ $allIssues }}</h2>
                 <h6 class="card-text">Increased by 60%</h6>
             </div>
         </div>

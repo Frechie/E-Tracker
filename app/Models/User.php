@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Issues\Issue;
+use App\Models\Issues\Issue_Diary;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -48,6 +49,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function issues(){
         return $this->hasMany(Issue::class, 'issue_raised_by_uid');
+    }
+
+    public function issuesDiary(){
+        return $this->hasMany(Issue_Diary::class, 'issue_assignee_id');
     }
 
 }

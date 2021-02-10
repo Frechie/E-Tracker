@@ -17,7 +17,7 @@ class CreateIssuesTable extends Migration
 
             $table->id();
             $table->text('issue_subject');
-            $table->text('issue_description');
+            $table->mediumText('issue_description');
             $table->integer('issue_raised_by_uid');
             $table->string('issue_category');
             $table->string('issue_sub_category');

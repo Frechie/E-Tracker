@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Issues;
 
 use App\Http\Controllers\Controller;
 use App\Models\Issues\Issue;
+use App\Models\Categories\Category;
 use Illuminate\Http\Request;
 
 
@@ -29,7 +30,9 @@ class IssuesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view('issues.create_issues');
+        $category = Category::all();
+
+        return view('issues.create_issues')->with('categories', $category);
     }
 
     /**

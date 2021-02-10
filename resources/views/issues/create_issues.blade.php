@@ -26,11 +26,9 @@
               <div class="form-group">
                 <label for="category" class="text-dark">Select an Asset Class</label>
                 <select name="asset_class" class="form-control form-control-sm text-dark" id="asset-class" required>
-                  <option>Technical</option>
-                  <option>Front Office</option>
-                  <option>Back office</option>
-                  <option>ALM</option>
-                  <option>Others</option>
+                  @foreach($categories as $cat)
+                  <option>{{ $cat->category_name }}</option>
+                 @endforeach
                 </select>
               </div>
             </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Category\CategoriesController;
+use App\Http\Controllers\Category\SubCategoryController;
 use App\Http\Controllers\Issues\IssuesController;
 use Illuminate\Http\Request;
 use App\Models\Issues\Issue;
@@ -39,5 +40,7 @@ Route::get('/profile', [App\Http\Controllers\Profile\ProfileController::class, '
 
 
 Route::resource('categories', CategoriesController::class);
+
+Route::resource('sub-category', SubCategoryController::class);
 
 Route::resource('issues', IssuesController::class);

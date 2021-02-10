@@ -23,4 +23,8 @@ class Issue extends Model {
     public function user(){
        return $this->belongsTo(User::class, 'issue_raised_by_uid');
     }
+
+    public function issueDiary(){
+       return $this->hasMany(Issue_Diary::class, 'issue_id');
+    }
 }
