@@ -19,10 +19,6 @@ use App\Models\Issues\Issue;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard/{type}', function (Request $request) {
 
     $requestTyoe = $request->type;

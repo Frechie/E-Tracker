@@ -13,8 +13,7 @@ class SubCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index()    {
         //
     }
 
@@ -23,8 +22,7 @@ class SubCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create()    {
         //
     }
 
@@ -34,8 +32,7 @@ class SubCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request)   {
         //
     }
 
@@ -45,8 +42,7 @@ class SubCategoryController extends Controller
      * @param  \App\Models\Categories\Sub_Category  $sub_Category
      * @return \Illuminate\Http\Response
      */
-    public function show(Sub_Category $sub_Category)
-    {
+    public function show(Sub_Category $sub_Category)   {
         //
     }
 
@@ -56,8 +52,7 @@ class SubCategoryController extends Controller
      * @param  \App\Models\Categories\Sub_Category  $sub_Category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sub_Category $sub_Category)
-    {
+    public function edit(Sub_Category $sub_Category)   {
         //
     }
 
@@ -68,8 +63,7 @@ class SubCategoryController extends Controller
      * @param  \App\Models\Categories\Sub_Category  $sub_Category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sub_Category $sub_Category)
-    {
+    public function update(Request $request, Sub_Category $sub_Category)   {
         //
     }
 
@@ -79,8 +73,7 @@ class SubCategoryController extends Controller
      * @param  \App\Models\Categories\Sub_Category  $sub_Category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sub_Category $sub_Category)
-    {
+    public function destroy(Sub_Category $sub_Category) {
         //
     }
 }

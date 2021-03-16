@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-  <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
+  <link rel="shortcut icon" href="{{ asset('assets/admin/img/icon/seaicologo.ico') }}" />
 </head>
 <body>
   <div class="container-scroller">
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper bg-dark  d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="{{ route('home') }}">
-          <img src="{{ asset('assets/images/logo.svg') }}" alt="logo" />
+        <a class="navbar-brand brand-logo" href="">
+          <img src="{{ asset('assets/admin/img/icon/seaicoLogo.png') }}" alt="SeaicoLogo" />
         </a>
         <a class="navbar-brand brand-logo-mini" href="{{ route('home') }}">
           <img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" />
