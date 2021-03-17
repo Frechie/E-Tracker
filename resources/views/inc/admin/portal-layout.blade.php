@@ -10,8 +10,8 @@
     <meta name="keywords" content="FInancial Technology Firm, Technology Consultant">
     <meta name="keywords" content="Issue Resolution Tracker">
     <meta name="keywords" content="Simplified Solution meet for every organization...">
-    <title>Seaico Technologies Limited: E-Tracker App</title>
-    <link href="{{asset('assets/admin/img/favicon.png') }}" rel="icon">
+    <title>Seaico Issue Tracker App</title>
+    <link href="{{asset('assets/admin/img/icon/seaicologo.ico') }}" rel="icon">
     <link href="{{ asset('assets/icofont/icofont.min.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
@@ -37,10 +37,9 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-purple elevation-4">
             <!-- Brand Logo -->
-            <a href="{{url('/')}}" class="brand-link text-center text-bold">
+            <a href="https://seaicotechnologies.com/" class="brand-link text-center text-bold" target="_blank">
                 <div class="icon">
-                    <i class="nav-icon icofont-dashboard text-white"></i>
-                    E-Tracker
+                    <i class="nav-icon icofont-home text-white"></i>
                 </div>
 
             </a>
@@ -52,7 +51,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="{{ route('portal') }}" class="nav-link">
+                            <a href="" class="nav-link">
                                 <div class="icon">
                                     <i class="nav-icon icofont-dashboard text-white"></i>
                                     <p> Dashboard </p>
@@ -89,7 +88,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('user')}}" class="nav-link">
+                                    <a href="" class="nav-link">
                                         <div class="icon">
                                             <i class="nav-icon icofont-user"></i>
                                             <p>Users</p>
@@ -123,7 +122,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{url('/portal/training') }}" class="nav-link">
+                                    <a href="" class="nav-link">
                                         <i class="nav-icon icofont-database-add text-white"></i>
                                         <p>Register</p>
                                     </a>

@@ -21,11 +21,11 @@ use App\Models\Issues\Issue;
 
 Route::get('/dashboard/{type}', function (Request $request) {
 
-    $requestTyoe = $request->type;
+    $requestType = $request->type;
 
-    $issueType = Issue::where('issue_status', $requestTyoe)->get();
+    $issueType = Issue::where('issue_status', $requestType)->get();
 
-    return view('issues.dashboard-issues')->with(['issues_type' => $issueType, 'requestType' => $requestTyoe ]);
+    return view('issues.dashboard-issues')->with(['issues_type' => $issueType, 'requestType' => $requestType ]);
 });
 
 Auth::routes(['verify' => true]);

@@ -1,133 +1,218 @@
-@extends('inc.layout')
+@extends('inc.admin.portal-layout')
 @section('content')
 
-<div class="row">
-    <div class="col-lg-3 col-md-6 stretch-card grid-margin">
-        <div class="card bg-info card-img-holder text-white">
-            <div class="card-body">
-                <a class="text-white" href="{{ url('/dashboard/new') }}">
-                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-bold mb-3">New Issues <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
-                    </h4>
-                    <h1 class="mb-5 text-center">{{ $new_issues }}</h1>
-                    <h6 class=""> View Issues </h6>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6 stretch-card grid-margin">
-        <div class="card bg-danger card-img-holder text-white">
-            <div class="card-body">
-                <a class="text-white" href="{{ url('/dashboard/oustanding') }}">
-                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-bold mb-3">Work in Progress
-                     <i class="mdi mdi-chevron-double-right mdi-24px float-right"></i>
-                    </h4>
-                    <h2 class="mb-5 text-center">{{ $oustandingIssues }}</h2>
-                    <h6 class="card-text">Increased by 60%</h6>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6 stretch-card grid-margin">
-        <div class="card bg-success card-img-holder text-white">
-            <div class="card-body">
-                <a class="text-white" href="{{ url('/dashboard/oustanding') }}">
-                    <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-bold mb-3">
-                    Resolved Issues 
-                    <i class="mdi mdi-checkbox-multiple-marked-circle mdi-24px float-right"></i>
-                    </h4>
-                    <h2 class="mb-5 text-center">{{ $completedIssues }} </h2>
-                    <h6 class="card-text">Increased by 5%</h6>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6 stretch-card grid-margin">
-        <div class="card bg-primary card-img-holder text-white">
-            <div class="card-body">
-                <img src="{{ asset('assets/images/dashboard/circle.svg') }}" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-bold mb-3">Total Issues 
-                <i class="mdi mdi-chart-line mdi-24px float-right"></i>
-                </h4>
-                <h2 class="mb-5 text-center">{{ $allIssues }}</h2>
-                <h6 class="card-text">Increased by 60%</h6>
-            </div>
-        </div>
-    </div>
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Dashboard</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
 </div>
+<!-- /.content-header -->
 
-<div class="row">
-    <div class="col-12 grid-margin">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Recent Issues</h4>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th> Assignee </th>
-                                <th> Subject </th>
-                                <th> Status </th>
-                                <th> Last Update </th>
-                                <th> Issue ID </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('assets/images/faces/face1.jpg') }}" class="mr-2" alt="image"> David Grey
-                                </td>
-                                <td> Fund is not recieved </td>
-                                <td>
-                                    <label class="badge badge-gradient-success">Done</label>
-                                </td>
-                                <td> Dec 5, 2017 </td>
-                                <td> WD-12345 </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('assets/images/faces/face2.jpg') }}" class="mr-2" alt="image"> Stella Johnson
-                                </td>
-                                <td> High loading time </td>
-                                <td>
-                                    <label class="badge badge-gradient-warning">In-Progress</label>
-                                </td>
-                                <td> Dec 12, 2017 </td>
-                                <td> WD-12346 </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('assets/images/faces/face3.jpg') }}" class="mr-2" alt="image"> Marina Michel
-                                </td>
-                                <td> Website down for one week </td>
-                                <td>
-                                    <label class="badge badge-gradient-info">On-Hold</label>
-                                </td>
-                                <td> Dec 16, 2017 </td>
-                                <td> WD-12347 </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('assets/images/faces/face4.jpg') }}" class="mr-2" alt="image"> John Doe
-                                </td>
-                                <td> Loosing control on server </td>
-                                <td>
-                                    <label class="badge badge-gradient-danger">Rejected</label>
-                                </td>
-                                <td> Dec 3, 2017 </td>
-                                <td> WD-12348 </td>
-                            </tr>
-                        </tbody>
-                    </table>
+<!-- Main content -->
+<section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{ $new_issues }}</h3>
+
+                <p>New Issues</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="{{ url('/dashboard/new') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>{{ $oustandingIssues }}<sup style="font-size: 20px"></sup></h3>
+
+                <p>In-Progress</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="{{ url('/dashboard/in-progress') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>0</h3>
+
+                <p>Pending HD</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="{{ url('/dashboard/pending-hd') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>{{ $completedIssues }}</h3>
+
+                <p>Completed</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="{{ url('/dashboard/completed') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+    
+<section class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-3">
+
+                <!-- Profile Image -->
+                <div class="card card-purple card-outline">
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle" src="{{asset('assets/admin/img/user4-128x128.jpg') }}" alt="User profile picture">
+                        </div>
+
+                        <h3 class="profile-username text-center">{{ Auth::user()->name}}</h3>
+
+                        <p class="text-muted text-center">Software Engineer</p>
+
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>Followers</b> <a class="float-right">1,322</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Following</b> <a class="float-right">543</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Friends</b> <a class="float-right">13,287</a>
+                            </li>
+                        </ul>
+
+                        <a href="#" class="btn bg-purple btn-block"><b>Follow</b></a>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+                <!-- /.card -->
 
-@endsection
+                <!-- About Me Box -->
+                <div class="card card-purple">
+                    <div class="card-header">
+                        <h3 class="card-title">About Me</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <strong><i class="fas fa-book mr-1"></i> Education</strong>
+
+                        <p class="text-muted">
+                            B.S. in Computer Science from the University of Tennessee at Knoxville
+                        </p>
+
+                        <hr>
+
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+
+                        <p class="text-muted">Malibu, California</p>
+
+                        <hr>
+
+                        <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+
+                        <p class="text-muted">
+                            <span class="tag tag-danger">UI Design</span>
+                            <span class="tag tag-success">Coding</span>
+                            <span class="tag tag-info">Javascript</span>
+                            <span class="tag tag-warning">PHP</span>
+                            <span class="tag tag-primary">Node.js</span>
+                        </p>
+
+                        <hr>
+
+                        <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header p-2 bg-purple text-white">
+                        Edit Profile
+                    </div><!-- /.card-header -->
+                    <div class="card-body">
+                        <form class="form-horizontal">
+                            <div class="form-group row">
+                                <label for="inputName" class="col-sm-3 col-form-label">Username</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" value="{{ Auth::user()->name }}" id="inputName" placeholder="Name" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" value="{{ Auth::user()->email }}" id="inputEmail" placeholder="Email" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputName2" class="col-sm-3 col-form-label">Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputName2" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputExperience" class="col-sm-3 col-form-label">Experience</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputSkills" class="col-sm-3 col-form-label">Skills</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="offset-sm-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="offset-sm-2 col-sm-10">
+                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- /.tab-content -->
+                    </div><!-- /.card-body -->
+                </div>
+                <!-- /.nav-tabs-custom -->
+            </div>
+            <!-- /.col -->
+        </div>
+        @endsection

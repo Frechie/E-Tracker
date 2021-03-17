@@ -1,0 +1,133 @@
+.sidebar-dark-purple{
+    background: linear-gradient(#360161, #22013d) ;
+}
+
+.content-wrapper{
+    margin-top: 50px;
+}
+
+#footer {
+    background: linear-gradient(#6e42c1,#6a149b);
+    padding: 0 0 20px 0;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .bg-explore {
+    background: linear-gradient(rgba(105, 17, 156, 0.952), rgba(59, 2, 83, 0.959));
+    color: #fff !important;
+  }
+  
+  #footer .footer-top {
+    background: linear-gradient(#6f42c1,#8320bd);
+    border-bottom: 1px solid #354144;
+    padding: 60px 0 30px 0;
+  }
+  
+  #footer .footer-top .footer-info {
+    margin-bottom: 30px;
+  }
+  
+  #footer .footer-top .footer-info h3 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  #footer .footer-top .footer-info p {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Raleway", sans-serif;
+    color: #fff;
+  }
+  
+  #footer .footer-top .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #21023b;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 30px;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
+  
+  #footer .footer-top .social-links a:hover {
+    background: #350257;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #footer .footer-top h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  
+  #footer .footer-top .footer-links {
+    margin-bottom: 3px;
+  }
+  
+  #footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #footer .footer-top .footer-links ul i {
+    padding-right: 2px;
+    color: #40dcfe;
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  #footer .footer-top .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  #footer .footer-top .footer-links ul li:first-child {
+    padding-top: 0;
+  }
+  
+  #footer .footer-top .footer-links ul a {
+    color: #fff;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+  }
+  
+  #footer .footer-top .footer-links ul a:hover {
+    color: #c27ef0;
+  }
+  
+  #footer .footer-top .footer-newsletter form {
+    margin-top: 30px;
+    background: #fff;
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 4px;
+  }
+  
+  #footer .credits {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+  }
+  
+  #footer .copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 0px;
+  }
+  
