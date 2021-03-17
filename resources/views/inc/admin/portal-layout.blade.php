@@ -13,7 +13,6 @@
     <title>Seaico Issue Tracker App</title>
     <link href="{{asset('assets/admin/img/icon/seaicologo.ico') }}" rel="icon">
     <link href="{{ asset('assets/icofont/icofont.min.css') }}" rel="stylesheet">
-
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.min.css') }}">
@@ -22,7 +21,6 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white fixed-top navbar-light">
             <!-- Left navbar links -->
@@ -31,6 +29,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
+
         </nav>
         <!-- /.navbar -->
 
@@ -46,12 +45,20 @@
 
             <!-- Sidebar -->
             <div class="sidebar">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="{{ asset('assets/admin/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="{{ route('profile') }}" class="d-block">{{ Auth::user()->name }}</a>
+                    </div>
+                </div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{ url('/home') }}" class="nav-link">
                                 <div class="icon">
                                     <i class="nav-icon icofont-dashboard text-white"></i>
                                     <p> Dashboard </p>
@@ -59,16 +66,48 @@
 
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('profile') }}" class="nav-link">
+                        <li class="nav-item has-treeview">
+                            <a href="" class="nav-link">
                                 <div class="icon">
-                                    <i class="nav-icon icofont-ui-v-card text-white"></i>
-                                    <p> Issues </p>
+                                    <i class="nav-icon icofont-learn text-white"></i>
+                                    <p>Issues</p>
+
                                 </div>
-
+                                <i class="fas fa-angle-left right"></i>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('/issues') }}" class="nav-link">
+                                        <i class="nav-icon icofont-database text-white"></i>
+                                        <p>All Issues</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('/issues/in-progress') }}" class="nav-link">
+                                        <i class="nav-icon icofont-plus-circle text-white"></i>
+                                        <p>New Issues</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="nav-icon icofont-refresh"></i>
+                                        <p>In-Progress </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="nav-icon icofont-question-circle"></i>
+                                        <p>Pending HD </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="nav-icon icofont-ui-check"></i>
+                                        <p>Completed Issues</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-
                         <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="nav-icon icofont-chart-histogram"></i>
@@ -110,38 +149,6 @@
                             </ul>
                         </li>
 
-
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <div class="icon">
-                                    <i class="nav-icon icofont-learn text-white"></i>
-                                    <p>Training</p>
-
-                                </div>
-                                <i class="fas fa-angle-left right"></i>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="nav-icon icofont-database-add text-white"></i>
-                                        <p>Register</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="nav-icon far fa-envelope"></i>
-                                        <p> Messages</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="nav-icon far fa-calendar-alt"></i>
-                                        <p> Schedule </p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
                         <li class="nav-item">
                             <a class=" nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <div class="icon">
@@ -175,15 +182,11 @@
     </footer>
     </div>
     <script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
-    <!-- jQuery UI 1.11.4 -->
     <script src="{{ asset('assets/admin/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
-    <!-- Bootstrap 4 -->
     <script src="{{ asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <!-- AdminLTE App -->
     <script src="{{ asset('assets/admin/js/adminlte.js') }}"></script>
 </body>
 

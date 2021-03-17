@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="shortcut icon" href="{{ asset('assets/admin/img/icon/seaicologo.ico') }}" />
 </head>
+
 <body>
   <div class="container-scroller">
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -34,15 +35,15 @@
             </a>
           </li>
           <li class="nav-item nav-logout d-none d-lg-block">
-          
-          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-          <i class="mdi mdi-logout text-danger"></i>
-              </a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-              </form>
-              
-            </li>
+
+            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              <i class="mdi mdi-logout text-danger"></i>
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+            </form>
+
+          </li>
           <li class="nav-item d-none d-lg-block full-screen-link">
             <a class="nav-link">
               <i class="mdi mdi-fullscreen text-dark" id="fullscreen-button"></i>
@@ -151,7 +152,8 @@
               <span class="menu-title">Dashboard</span>
               <i class="mdi mdi-home menu-icon text-white"></i>
             </a>
-          </li>          <li class="nav-item">
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{ url('categories') }}">
               <span class="menu-title">Categories </span>
               <i class="mdi mdi-format-list-bulleted menu-icon text-white"></i>

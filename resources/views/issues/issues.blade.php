@@ -1,4 +1,4 @@
-@extends('inc.layout')
+@extends('inc.admin.portal-layout')
 
 @section('content')
 
@@ -13,7 +13,7 @@
                 <h4 class="card-title">Recent Issues</h4>
                 <div class="table-responsive">
                     <table class="table table-hover table-striped">
-                        <thead class="bg-primary text-white">
+                        <thead class="bg-dark text-white">
                             <tr>
                                 <th> Issue ID </th>
                                 <th> Created By </th>

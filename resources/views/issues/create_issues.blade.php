@@ -1,4 +1,4 @@
-@extends('inc.layout')
+@extends('inc.admin.portal-layout')
 
 @section('content')
 
@@ -82,7 +82,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+          <button type="submit" class="btn btn-primary mr-2">Submit</button>
         </form>
       </div>
     </div>

@@ -1,4 +1,4 @@
-@extends('inc.layout')
+@extends('inc.admin.portal-layout')
 
 @section('content')
 
