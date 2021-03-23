@@ -14,7 +14,6 @@
                 </span>
                 @enderror
             </div>
-                <hr>
             <div class="form-floating">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required>
                 <label for="password" class="text-dark"> Password: </label>
