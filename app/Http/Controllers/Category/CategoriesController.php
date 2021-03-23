@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Categories\Category;
 use Illuminate\Http\Request;
 
-class CategoriesController extends Controller {
-    
-    public function __construct()    {
+class CategoriesController extends Controller
+{
+
+    public function __construct()
+    {
         $this->middleware(['auth', 'verified']);
     }
 
@@ -29,7 +31,8 @@ class CategoriesController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create()
+    {
         return view('category.add-category');
     }
 
@@ -39,7 +42,8 @@ class CategoriesController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)   {
+    public function store(Request $request)
+    {
         $cat = Category::create([
             'category_name' => $request->input('cat_name'),
             'category_description' => $request->input('cat_desc'),
@@ -57,7 +61,8 @@ class CategoriesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($id)
+    {
 
         $data = Category::find($id);
 
@@ -70,7 +75,8 @@ class CategoriesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $data = Category::find($id);
 
@@ -84,7 +90,8 @@ class CategoriesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
 
         $catToUpdate = Category::find($id);
 
@@ -105,7 +112,8 @@ class CategoriesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $catTodelete = Category::find($id);
 
         $catTodelete->delete();

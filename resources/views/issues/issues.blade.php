@@ -5,7 +5,6 @@
 @if( $issuesRecords->count() === 0 )
 <h4 class="text-danger">No available data found!!</h4>
 @else
-
 <div class="row">
     <div class="col-12 grid-margin">
         <div class="card">

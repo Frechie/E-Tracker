@@ -14,9 +14,9 @@
     <link href="{{asset('assets/admin/img/icon/seaicologo.ico') }}" rel="icon">
     <link href="{{ asset('assets/icofont/icofont.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -40,7 +40,6 @@
                 <div class="icon">
                     <i class="nav-icon icofont-home text-white"></i>
                 </div>
-
             </a>
 
             <!-- Sidebar -->
@@ -83,7 +82,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ url('/issues/in-progress') }}" class="nav-link">
+                                    <a href="{{ url('/issues/create') }}" class="nav-link">
                                         <i class="nav-icon icofont-plus-circle text-white"></i>
                                         <p>New Issues</p>
                                     </a>
