@@ -28,14 +28,15 @@ class DashboardController extends Controller
 
         $new_issues = $allIssues->where('issue_status', 'NEW')->count();
         $countCompletedIssues = $allIssues->where('issue_status', 'COMPLETED')->count();
-        $counutOutstandingIssues = $allIssues->where('issue_status', 'OUTSTANDING')->count();
-        $countAllIssues = $allIssues->count();
+        $countOutstandingIssues = $allIssues->where('issue_status', 'OUTSTANDING')->count();
+        $pendingHDIssues = $allIssues->where('issue_status', 'PENDING-HD')->count();
+        //$countAllIssues = $allIssues->count();
 
         return view('home')->with([
             'new_issues' => $new_issues,
             'completedIssues' =>  $countCompletedIssues,
-            'oustandingIssues' => $counutOutstandingIssues,
-            'allIssues' => $countAllIssues
+            'oustandingIssues' => $countOutstandingIssues,
+            'pendingHDIssues' => $pendingHDIssues
         ]);
     }
 }

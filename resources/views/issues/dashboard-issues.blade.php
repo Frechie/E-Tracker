@@ -10,7 +10,7 @@
     <div class="col-12 grid-margin">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">{{ $requestType }} Issues</h4>
+                <h4 class="card-title">{{ strtoupper($requestType) }} Issues</h4>
                 <div class="table-responsive">
                     <table class="table table-hover table-striped">
                         <thead class="bg-primary text-white">

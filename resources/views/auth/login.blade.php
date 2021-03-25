@@ -3,7 +3,7 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <img class="img-fluid" src="{{asset('assets/admin/img/icon/seaicologo.png') }}" alt="SeaicoTech-Logo">
-            <h1 class="h3 mb-3 fw-normal"><strong>Login</strong></h1>
+            <h1 class="h3 mb-3 text-white text-bold"><strong>Login</strong></h1>
 
             <div class="form-floating">
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="E-Mail Address" required>
@@ -26,7 +26,7 @@
 
             <div class="mb-3 form-check form-switch">
                 <input class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} type="checkbox">
-                <label class="form-check-label" for="remember"> {{ __('Remember Me') }}</label>
+                <label class="form-check-label text-white text-bold" for="remember"> {{ __('Remember Me') }}</label>
             </div>
 
             <button type="submit" class="w-100 btn btn-lg btn-primary">{{ __('Login') }}</button>

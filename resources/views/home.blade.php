@@ -51,7 +51,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>0</h3>
+                <h3>{{ $pendingHDIssues }}</h3>
 
                 <p>Pending HD</p>
               </div>
