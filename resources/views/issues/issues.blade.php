@@ -1,5 +1,4 @@
 @extends('inc.admin.portal-layout')
-
 @section('content')
 
 @if( $issuesRecords->count() === 0 )
@@ -31,7 +30,7 @@
                                 </td>
                                 <td> {{ $issue->issue_subject }}</td>
                                 <td>
-                                    <label class="badge badge-gradient-info">{{ $issue->issue_status}}</label>
+                                    <label class="badge bg-info">{{ $issue->issue_status}}</label>
                                 </td>
                                 <td> {{$issue->created_at}} </td>
 
