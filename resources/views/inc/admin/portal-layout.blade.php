@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
-    
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -49,7 +49,10 @@
                         <img src="{{ asset('assets/admin/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="{{ route('profile') }}" class="d-block">{{ Auth::user()->name }}</a>
+                        <a href="{{ route('profile') }}" class="d-block">{{
+                            Auth::user()->name                          
+                            }}
+                        </a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
@@ -57,7 +60,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="{{ url('/home') }}" class="nav-link">
+                            <a href="{{ route('dashboard') }}" class="nav-link">
                                 <div class="icon">
                                     <i class="nav-icon icofont-dashboard text-white"></i>
                                     <p> Dashboard </p>
