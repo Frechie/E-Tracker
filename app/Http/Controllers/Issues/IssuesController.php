@@ -74,12 +74,13 @@ class IssuesController extends Controller {
      * @param  \App\Models\Issues\Issue  $issue
      * @return \Illuminate\Http\Response
      */
+
     public function show($id) {
         $issue = Issue::findOrFail($id);
-        $category = Category::all();
+        $issue_updates = Issue_Diary::where('issue_id', $id)->get();
         // return $issue;
 
-        return view('issues.issue')->with(['issue' => $issue, 'categories' => $category]);
+        return view('issues.issue')->with(['issue' => $issue, 'issue_updates' => $issue_updates]);
     }
 
     /**

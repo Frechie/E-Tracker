@@ -51,15 +51,46 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-12">
-                                <button type="submit" class="btn bg-info w-100">Update Case</button>
+                                    <button type="submit" class="btn bg-info w-100">Update Case</button>
                                 </div>
                             </div>
-
-
-                           
                         </form>
                     </div>
                 </div>
+
+                <!--Load all Issue Updates  -->
+                @foreach($issue_updates as $issue_update)
+                <div class="timeline" style="margin-top: 15px;">
+                    <div>
+                        <i class="fas fa-envelope bg-secondary"></i>
+                        <div class="timeline-item">
+                            <span class="time bg-secondary">
+                                <i class="fas fa-clock"></i>
+                                {{ $issue_update->created_at->format('H:i:s') }}
+                            </span>
+                            <h3 class="timeline-header bg-secondary">
+                               Case-Update :
+                                 <i class="icofont icofont-long-arrow-right"></i> 
+                                 {{ $issue_update->created_at->format('D') }}, {{ $issue_update->created_at->format('M d Y') }}
+                            </h3>
+
+                            <div class="timeline-body">
+                                {{ $issue_update->issue_commenter_comment}}
+                            </div>
+                            <div class="timeline-footer">
+                                Atttached Files:
+                                <a class="text-blue" href="{{asset($issue_update->issue_uploads)}}" download="download">
+                                    {{$issue_update->issue_uploads}}
+                                    <i class="icofont icofont-download text-primary"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END timeline item -->
+                </div>
+                @endforeach
+                <!--End of the Issues Updates -->
+
 
                 <div class="timeline" style="margin-top: 15px;">
                     <div>
@@ -77,12 +108,11 @@
                                 {{ $issue->issue_description}}
                             </div>
                             <div class="timeline-footer">
-                                Atttached Files: 
+                                Atttached Files:
                                 <a class="text-blue" href="{{asset($issue->issue_uploads)}}" download="download">
-                                {{$issue->issue_uploads}}
-                                <i class="icofont icofont-download text-primary"></i>
+                                    {{$issue->issue_uploads}}
+                                    <i class="icofont icofont-download text-primary"></i>
                                 </a>
-
                             </div>
                         </div>
                     </div>
