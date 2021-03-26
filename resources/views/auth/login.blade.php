@@ -38,6 +38,3 @@
             </div>
         </form>
     @endsection
-
-    //Create a dashboard showiing Issues left unattended to in more than 24 hours
-    //Line charts for Weekly 

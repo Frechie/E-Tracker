@@ -18,12 +18,12 @@
                             </h6>
                         </div>
 
-                        <form method="POST" action="{{ url('/issues') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/issues') }}/{{ $issue->id }}" enctype="multipart/form-data">
                             @csrf
-
+                            @method('PUT')
                             <div class="form-group">
                                 <label for="issue_description" class="text-dark">
-                                    <strong>Explain the issues you have here?</strong>
+                                    <strong>Comments:</strong>
                                 </label>
 
                                 <textarea name="issue_desc" class="form-control" id="issue_description" rows="8" required>
@@ -77,7 +77,11 @@
                                 {{ $issue->issue_description}}
                             </div>
                             <div class="timeline-footer">
-                                Atttached Files: <a href=""><i class="icofont icofont-download text-primary"></i></a>
+                                Atttached Files: 
+                                <a class="text-blue" href="{{asset($issue->issue_uploads)}}" download="download">
+                                {{$issue->issue_uploads}}
+                                <i class="icofont icofont-download text-primary"></i>
+                                </a>
 
                             </div>
                         </div>

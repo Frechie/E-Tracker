@@ -5,15 +5,14 @@ namespace App\Http\Controllers\Issues;
 use App\Http\Controllers\Controller;
 use App\Models\Issues\Issue;
 use App\Models\Issues\Issue_Diary;
+
 use App\Models\Categories\Category;
 use Illuminate\Http\Request;
 
 
-class IssuesController extends Controller
-{
+class IssuesController extends Controller {
 
-    public function __construct()
-    {
+    public function __construct()     {
         $this->middleware(['auth', 'verified']);
     }
     /**
@@ -21,8 +20,7 @@ class IssuesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index()  {
         $issues = Issue::orderBy('created_at', 'DESC')->get();
 
         return view('issues.issues')->with('issuesRecords', $issues);
@@ -103,7 +101,24 @@ class IssuesController extends Controller
      */
     public function update(Request $request, Issue $issue) {
         //Issues update would be added to the Issue Diary Table in order to avoid update overrides
+        $caseUploads = '';
 
+        $values = [
+            'issue_id' => $issue->id,
+            'client_id' => $issue->id,
+            'issue_commenter_id' => $request->user()->id,
+            'issue_commenter_comment' => $request->issue_desc,
+            'issue_status' => $request->issue_status,
+            'issue_upload' => $request->issue_upload
+
+
+        ];
+
+        return $values;
+
+        if ($request->hasFile('issue_upload')){
+            $caseUploads = $this->uploadFile($request);
+        }
 
 
     }
@@ -127,4 +142,6 @@ class IssuesController extends Controller
 
         return $fileName. '_'.time(). '.'.$uploadExt;
     }
+
+    
 }

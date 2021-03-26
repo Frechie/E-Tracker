@@ -17,8 +17,8 @@ class CreateIssueDiariesTable extends Migration
             $table->id();
             $table->string('issue_id');
             $table->string('client_id');
-            $table->string('issue_assignee_id')->nullable();
-            $table->mediumText('issue_assignee_comment')->nullable();
+            $table->string('issue_commenter_id')->nullable();
+            $table->mediumText('issue_commenter_comment')->nullable();
             $table->string('issue_status');
             $table->string('issue_uploads')->nullable();
             $table->timestamps();
