@@ -39,6 +39,7 @@
             <a href="https://seaicotechnologies.com/" class="brand-link text-center text-bold" target="_blank">
                 <div class="icon">
                     <i class="nav-icon icofont-home text-white"></i>
+                    SEAICO TECHNOLOGIES
                 </div>
             </a>
 
