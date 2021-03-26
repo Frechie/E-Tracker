@@ -8,10 +8,10 @@
     <div class="col-12 grid-margin">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Recent Issues</h4>
+                <h2 class="card-title text-bold">All Cases</h2>
                 <div class="table-responsive">
                     <table class="table table-hover table-striped">
-                        <thead class="bg-dark text-white">
+                        <thead class="bg-blue text-white">
                             <tr>
                                 <th> Issue ID </th>
                                 <th> Created By </th>

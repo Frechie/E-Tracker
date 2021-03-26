@@ -10,7 +10,7 @@
     <div class="col-12 grid-margin">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">{{ strtoupper($requestType) }} Issues</h4>
+                <h4 class="card-title">CASE STATUS: {{ strtoupper($requestType) }}</h4>
                 <div class="table-responsive">
                     <table class="table table-hover table-striped">
                         <thead class="bg-primary text-white">
@@ -34,7 +34,7 @@
                                 <td>
                                     <label class="badge badge-gradient-info">{{ $issue->issue_status}}</label>
                                 </td>
-                                <td> {{$issue->created_at}} </td>
+                                <td> {{$issue->created_at->format('M - d - Y')}} </td>
 
                             </tr>
                             @endforeach

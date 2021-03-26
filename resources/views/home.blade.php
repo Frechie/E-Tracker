@@ -36,7 +36,7 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>{{ $oustandingIssues }}<sup style="font-size: 20px"></sup></h3>
+                        <h3>{{ $issues_in_progress }}<sup style="font-size: 20px"></sup></h3>
 
                         <p>In-Progress</p>
                     </div>

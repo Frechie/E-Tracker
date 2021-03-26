@@ -24,18 +24,18 @@ class DashboardController extends Controller
     public function index()  {
 
         //$new_issues = Issue::where('issue_status', 'NEW')->count();
-        $allIssues = Issue::all();
+        $allIssues = Issue::all()->orderBy('created_at', 'DESC');
 
         $new_issues = $allIssues->where('issue_status', 'NEW')->count();
         $countCompletedIssues = $allIssues->where('issue_status', 'COMPLETED')->count();
-        $countOutstandingIssues = $allIssues->where('issue_status', 'OUTSTANDING')->count();
+        $countOutstandingIssues = $allIssues->where('issue_status', 'IN-PROGRESS')->count();
         $pendingHDIssues = $allIssues->where('issue_status', 'PENDING-HD')->count();
         //$countAllIssues = $allIssues->count();
 
         return view('home')->with([
             'new_issues' => $new_issues,
             'completedIssues' =>  $countCompletedIssues,
-            'oustandingIssues' => $countOutstandingIssues,
+            'issues_in_progress' => $countOutstandingIssues,
             'pendingHDIssues' => $pendingHDIssues
         ]);
     }
