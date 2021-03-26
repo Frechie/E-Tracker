@@ -24,7 +24,7 @@ class DashboardController extends Controller
     public function index()  {
 
         //$new_issues = Issue::where('issue_status', 'NEW')->count();
-        $allIssues = Issue::all()->orderBy('created_at', 'DESC');
+        $allIssues = Issue::all();
 
         $new_issues = $allIssues->where('issue_status', 'NEW')->count();
         $countCompletedIssues = $allIssues->where('issue_status', 'COMPLETED')->count();

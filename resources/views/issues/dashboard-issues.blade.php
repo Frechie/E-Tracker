@@ -15,7 +15,7 @@
                     <table class="table table-hover table-striped">
                         <thead class="bg-primary text-white">
                             <tr>
-                                <th> Issue ID </th>
+                                <th> Case-ID </th>
                                 <th> Created By </th>
                                 <th> Subject </th>
                                 <th> Status </th>

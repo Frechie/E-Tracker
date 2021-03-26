@@ -20,11 +20,8 @@ use App\Models\Issues\Issue;
 */
 
 Route::get('/dashboard/{type}', function (Request $request) {
-
     $requestType = $request->type;
-
-    $issueType = Issue::where('issue_status', $requestType)->get();
-
+    $issueType = Issue::where('issue_status', $requestType)->orderBy('created_at', 'DESC')->get();
     return view('issues.dashboard-issues')->with(['issues_type' => $issueType, 'requestType' => $requestType ]);
 });
 

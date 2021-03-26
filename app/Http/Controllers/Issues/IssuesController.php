@@ -8,9 +8,11 @@ use App\Models\Categories\Category;
 use Illuminate\Http\Request;
 
 
-class IssuesController extends Controller {
+class IssuesController extends Controller
+{
 
-    public function __construct()    {
+    public function __construct()
+    {
         $this->middleware(['auth', 'verified']);
     }
     /**
@@ -18,8 +20,9 @@ class IssuesController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $issues = Issue::all();
+    public function index()
+    {
+        $issues = Issue::orderBy('created_at', 'DESC')->get();
 
         return view('issues.issues')->with('issuesRecords', $issues);
     }
@@ -29,7 +32,7 @@ class IssuesController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
+    public function create() {
         $category = Category::all();
 
         return view('issues.create_issues')->with('categories', $category);
@@ -41,42 +44,29 @@ class IssuesController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
-
+    public function store(Request $request)  {
         $filenameToStore = '';
 
-        if ($request->hasFile('issue_upload')){
-
-
-        $upload =  $request->file('issue_upload')->getClientOriginalName();
-        $fileName = pathinfo($upload, PATHINFO_FILENAME);
-        $uploadExt = $request->file('issue_upload')->extension();
-
-        $filenameToStore = $fileName.'_'.time().'.'.$uploadExt;
-        
+        if ($request->hasFile('issue_upload')) {
+            $filenameToStore =  $this->uploadFile($request);
         }
 
-        $user = $request->user()->name;
-        
         $issue = Issue::create([
-
             'issue_description' => $request->input('issue_desc'),
             'issue_category'  => $request->input('asset_class'),
             'issue_sub_category'  => $request->input('issue_cat'),
             'severity'  => $request->input('issue_severity'),
-            'issue_uploads'  => 'storage/issues/'.$user.'/'.$filenameToStore,
+            'issue_uploads'  => 'storage/issues/'.$request->user()->name.'/'.$filenameToStore,
             'issue_raised_by_uid' => $request->user()->id,
             'issue_status' => 'NEW',
             'issue_subject' => $request->input('issue_subject')
         ]);
 
-        if ($issue){
-            $request->file('issue_upload')->storeAs('issues/'.$user, $filenameToStore);
+        if ($issue) {
+            $request->file('issue_upload')->storeAs('issues/'.$request->user()->name, $filenameToStore);
         }
         //Retrieve  user input 
         return redirect('issues');
-
-       
     }
 
     /**
@@ -86,12 +76,11 @@ class IssuesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        $issue = Issue::find($id);
+        $issue = Issue::findOrFail($id);
+        $category = Category::all();
+        // return $issue;
 
-       // return $issue;
-
-        return view('issues.issue')->with('issue', $issue);
-      
+        return view('issues.issue')->with(['issue' => $issue, 'categories' => $category]);
     }
 
     /**
@@ -100,8 +89,7 @@ class IssuesController extends Controller {
      * @param  \App\Models\Issues\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function edit(Issue $issue)
-    {
+    public function edit(Issue $issue) {
         //
     }
 
@@ -112,8 +100,7 @@ class IssuesController extends Controller {
      * @param  \App\Models\Issues\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Issue $issue)
-    {
+    public function update(Request $request, Issue $issue) {
         //
     }
 
@@ -123,8 +110,17 @@ class IssuesController extends Controller {
      * @param  \App\Models\Issues\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Issue $issue)
-    {
+    public function destroy(Issue $issue) {
         //
+    }
+
+    //FileUpload Function
+    public function uploadFile(Request $request) {
+
+        $upload =  $request->file('issue_upload')->getClientOriginalName();
+        $fileName = pathinfo($upload, PATHINFO_FILENAME);
+        $uploadExt = $request->file('issue_upload')->extension();
+
+        return $fileName. '_'.time(). '.'.$uploadExt;
     }
 }
