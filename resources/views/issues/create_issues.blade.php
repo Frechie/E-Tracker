@@ -19,7 +19,7 @@
               <div class="col-lg-12 col-md-12">
                 <div class="form-group">
                   <label for="subject text-bold">Subject</label>
-                  <input type="text" class="form-control text-dark" id="subject" name="issue_subject" required>
+                  <input type="text" class="form-control text-dark" id="subject" name ="issue_subject" required>
                 </div>
               </div>
             </div>

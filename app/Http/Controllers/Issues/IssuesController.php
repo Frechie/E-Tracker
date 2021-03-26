@@ -101,26 +101,27 @@ class IssuesController extends Controller {
      */
     public function update(Request $request, Issue $issue) {
         //Issues update would be added to the Issue Diary Table in order to avoid update overrides
-        $caseUploads = '';
-
-        $values = [
-            'issue_id' => $issue->id,
-            'client_id' => $issue->id,
-            'issue_commenter_id' => $request->user()->id,
-            'issue_commenter_comment' => $request->issue_desc,
-            'issue_status' => $request->issue_status,
-            'issue_upload' => $request->issue_upload
-
-
-        ];
-
-        return $values;
+        $caseUploads = '';        
 
         if ($request->hasFile('issue_upload')){
             $caseUploads = $this->uploadFile($request);
         }
 
+       // return 'FrechieTest/'.$caseUploads;
 
+        $case_Diary = Issue_Diary::create([
+            'issue_id' => $issue->id,
+            'client_id' => $issue->id,
+            'issue_commenter_id' => $request->user()->id,
+            'issue_commenter_comment' => $request->issue_desc,
+            'issue_status' => $request->issue_status,
+            'issue_uploads' => 'storage/issues/'.$request->user()->name.'/'.$caseUploads
+        ]);
+
+        if ($case_Diary) {
+            $request->file('issue_upload')->storeAs('issues/'.$request->user()->name, $caseUploads);
+        }
+        return redirect('/issues');
     }
 
     /**
@@ -140,7 +141,7 @@ class IssuesController extends Controller {
         $fileName = pathinfo($upload, PATHINFO_FILENAME);
         $uploadExt = $request->file('issue_upload')->extension();
 
-        return $fileName. '_'.time(). '.'.$uploadExt;
+        return $fileName.'_'.time().'.'.$uploadExt;
     }
 
     

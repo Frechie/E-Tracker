@@ -42,8 +42,8 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
+
         $cat = Category::create([
             'category_name' => $request->input('cat_name'),
             'category_description' => $request->input('cat_desc'),
@@ -75,11 +75,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
 
-        $data = Category::find($id);
-
+        $data = Category::findOrFail($id);
         return view('category.edit-category')->with('categoryToUpdate', $data);
     }
 
@@ -90,15 +88,13 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
 
-        $catToUpdate = Category::find($id);
+        $catToUpdate = Category::findOrFail($id);
 
         $catToUpdate->category_name = $request->input('cat_name');
         $catToUpdate->category_description = $request->input('cat_desc');
         //$catToUpdate->cat_created_by_uid = $request->user()->id;
-
         $catToUpdate->save();
 
         return redirect('categories')
