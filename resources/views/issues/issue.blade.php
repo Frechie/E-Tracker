@@ -12,64 +12,14 @@
                 <!-- The time line -->
                 <div class="card">
                     <div class="card-body">
-                        <div class="card-header bg-blue">
-                            <h5 class="card-description text-white">
+                        <div class="card-header bg-info">
+                            <h6 class="card-description text-white">
                                 {{ $issue->issue_subject }}
-                            </h5>
+                            </h6>
                         </div>
 
-                        <form class="forms-sample" method="POST" action="{{ url('/issues') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/issues') }}" enctype="multipart/form-data">
                             @csrf
-
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="form-group">
-                                        <label for="category" class="text-dark">Select an Asset Class</label>
-                                        <select name="asset_class" class="form-control form-control-sm text-dark" id="asset-class" required>
-                                            @foreach($categories as $cat)
-                                            <option>{{ $cat->category_name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="form-group">
-                                        <label for="category" class="text-dark">Select a Category</label>
-                                        <select name="issue_cat" class="form-control form-control-sm text-dark" id="category" required>
-                                            <option>Technical</option>
-                                            <option>Front Office</option>
-                                            <option>Back office</option>
-                                            <option>ALM</option>
-                                            <option>Others</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="form-group">
-                                        <label for="issue_severity" class="text-dark">
-                                            Issue Severity
-                                        </label>
-                                        <select name="issue_severity" class="form-control form-control-sm text-dark" id="issue_severity" required>
-                                            <option>P1</option>
-                                            <option>P2</option>
-                                            <option>P3</option>
-                                            <option>P4</option>
-                                            <option>P5</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="form-group">
-                                        <label>Add log files </label>
-                                        <div class="input-group col-xs-12">
-                                            <input type="file" name="issue_upload" class="form-control" placeholder="Log Files accepted format(.log, .zip,, .png, .jpg .txt)... " required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="form-group">
                                 <label for="issue_description" class="text-dark">
@@ -77,14 +27,39 @@
                                 </label>
 
                                 <textarea name="issue_desc" class="form-control" id="issue_description" rows="8" required>
-              </textarea>
+                                </textarea>
                             </div>
 
-                            <button type="submit" class="btn bg-purple text-white mr-2">Update Case</button>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="form-group">
+                                        <select name="issue_status" class="form-control form-control-sm text-dark" id="category" required>
+                                            <option>Work-in-Progress</option>
+                                            <option>Pending HD</option>
+                                            <option>Client Accepted</option>
+                                            <option>Resolved</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-xs-12">
+                                            <input type="file" name="issue_upload" class="form-control" placeholder="Files accepted format(.log, .zip,, .png, .jpg .txt)... " required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-12">
+                                <button type="submit" class="btn bg-info w-100">Update Case</button>
+                                </div>
+                            </div>
+
+
+                           
                         </form>
                     </div>
                 </div>
-
 
                 <div class="timeline" style="margin-top: 15px;">
                     <div>
@@ -95,7 +70,7 @@
                                 {{ $issue->created_at->format('H:i:s') }}
                             </span>
                             <h3 class="timeline-header bg-info">
-                                {{ $issue->user->name}} replied on {{ $issue->created_at->format('D') }},  {{ $issue->created_at->format('M d Y') }}
+                                {{ $issue->user->name}} <i class="icofont icofont-long-arrow-right"></i> {{ $issue->created_at->format('D') }}, {{ $issue->created_at->format('M d Y') }}
                             </h3>
 
                             <div class="timeline-body">
