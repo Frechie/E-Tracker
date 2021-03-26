@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Issues;
 
 use App\Http\Controllers\Controller;
 use App\Models\Issues\Issue;
+use App\Models\Issues\Issue_Diary;
 use App\Models\Categories\Category;
 use Illuminate\Http\Request;
 
@@ -101,7 +102,10 @@ class IssuesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Issue $issue) {
-        //
+        //Issues update would be added to the Issue Diary Table in order to avoid update overrides
+
+
+
     }
 
     /**

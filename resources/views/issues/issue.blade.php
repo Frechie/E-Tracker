@@ -34,7 +34,7 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <select name="issue_status" class="form-control form-control-sm text-dark" id="category" required>
-                                            <option>Work-in-Progress</option>
+                                            <option selected="selected">Work-in-Progress</option>
                                             <option>Pending HD</option>
                                             <option>Client Accepted</option>
                                             <option>Resolved</option>
