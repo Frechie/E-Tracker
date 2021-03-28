@@ -19,7 +19,7 @@
               <div class="col-lg-12 col-md-12">
                 <div class="form-group">
                   <label for="subject text-bold">Subject</label>
-                  <input type="text" class="form-control text-dark" id="subject" name ="issue_subject" required>
+                  <input type="text" class="form-control text-dark" id="subject" name="issue_subject" required>
                 </div>
               </div>
             </div>
@@ -27,7 +27,7 @@
             <div class="row">
               <div class="col-lg-3 col-md-6">
                 <div class="form-group">
-                  <label for="category" class="text-dark">Select an Asset Class</label>
+                  <label for="category" class="text-dark">Select Asset Class</label>
                   <select name="asset_class" class="form-control form-control-sm text-dark" id="asset-class" required>
                     @foreach($categories as $cat)
                     <option>{{ $cat->category_name }}</option>
@@ -55,11 +55,10 @@
                     Issue Severity
                   </label>
                   <select name="issue_severity" class="form-control form-control-sm text-dark" id="issue_severity" required>
-                    <option>P1</option>
-                    <option>P2</option>
-                    <option>P3</option>
-                    <option>P4</option>
-                    <option>P5</option>
+                    <option class="text-success text-bold">Enhancement </option>
+                    <option class="text-purple text-bold">Enquiry</option>
+                    <option class="text-warning text-bold">Negative Business Impact </option>
+                    <option class="text-danger text-bold">Production is down</option>
                   </select>
                 </div>
               </div>

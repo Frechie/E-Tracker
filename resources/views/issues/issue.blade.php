@@ -101,7 +101,7 @@
                                 {{ $issue->created_at->format('H:i:s') }}
                             </span>
                             <h3 class="timeline-header bg-info">
-                                {{ $issue->user->name}} <i class="icofont icofont-long-arrow-right"></i> {{ $issue->created_at->format('D') }}, {{ $issue->created_at->format('M d Y') }}
+                                {{ $issue->getUser->name }} <i class="icofont icofont-long-arrow-right"></i> {{ $issue->created_at->format('D') }}, {{ $issue->created_at->format('M d Y') }}
                             </h3>
 
                             <div class="timeline-body">
@@ -109,8 +109,8 @@
                             </div>
                             <div class="timeline-footer">
                                 Atttached Files:
-                                <a class="text-blue" href="{{asset($issue->issue_uploads)}}" download="download">
-                                    {{$issue->issue_uploads}}
+                                <a class="text-blue" href="{{asset($issue->issue_uploads)}}" target="_blank">
+                                    {{ asset($issue->issue_uploads) }}
                                     <i class="icofont icofont-download text-primary"></i>
                                 </a>
                             </div>

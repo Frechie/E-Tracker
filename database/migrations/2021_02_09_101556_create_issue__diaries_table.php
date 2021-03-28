@@ -14,7 +14,7 @@ class CreateIssueDiariesTable extends Migration
     public function up()
     {
         Schema::create('issue__diaries', function (Blueprint $table) {
-            $table->id();
+            $table->id('issue_diary_id');
             $table->string('issue_id');
             $table->string('client_id');
             $table->string('issue_commenter_id')->nullable();

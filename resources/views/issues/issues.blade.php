@@ -28,7 +28,7 @@
                                 <tr>
                                     <td><a href="{{ url('/issues') }}/{{$issue->id }}"> {{ $issue->id}}</a> </td>
                                     <td>
-                                        {{ $issue->user->name}}
+                                        {{ $issue->getUser->name}}
                                     </td>
                                     <td> {{ $issue->issue_subject }}</td>
                                     <td>

@@ -77,7 +77,7 @@ class IssuesController extends Controller {
 
     public function show($id) {
         $issue = Issue::findOrFail($id);
-        $issue_updates = Issue_Diary::where('issue_id', $id)->get();
+        $issue_updates = Issue_Diary::where('issue_id', $id)->orderBY('issue_diary_id', 'DESC')->get();
         // return $issue;
 
         return view('issues.issue')->with(['issue' => $issue, 'issue_updates' => $issue_updates]);

@@ -20,11 +20,11 @@ class Issue extends Model {
         'severity'
     ];
 
-    public function user(){
-       return $this->belongsTo(User::class, 'issue_raised_by_uid');
+    public function getUser(){
+       return $this->belongsTo(User::class, 'issue_raised_by_uid', 'id');
     }
 
-    public function issueDiary(){
-       return $this->hasMany(Issue_Diary::class, 'issue_id');
+    public function getIssueDiary(){
+       return $this->hasMany(Issue_Diary::class, 'issue_id', 'id');
     }
 }

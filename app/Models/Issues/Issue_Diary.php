@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Issue_Diary extends Model {
-    use HasFactory;
+        use HasFactory;
+
+        protected $primaryKey = 'issue_diary_id';
 
     protected $fillable = [
+        'issue_diary_id',
         'issue_id',
         'client_id',
         'issue_commenter_id',
@@ -17,11 +20,7 @@ class Issue_Diary extends Model {
         'issue_uploads'
     ];
 
-    public function user() {
-        return $this->belongsTo(User::class,  'issue_assignee_id');
-    }
-
-    public function issue() {
-        return $this->belongsTo(Issue::class, 'issue_id');
+    public function getIssue() {
+        return $this->belongsTo(Issue::class, 'issue_id', 'issue_diary_id');
     }
 }

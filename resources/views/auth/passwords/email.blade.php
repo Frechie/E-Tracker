@@ -3,7 +3,7 @@
 
 
 <img class="img-fluid" src="{{asset('assets/admin/img/icon/seaicologo.png') }}" alt="SeaicoTech-Logo">
-<h1 class="h3 mb-3 fw-normal text-warning"><strong>Rest Password</strong></h1>
+<h1 class="h3 mb-3 fw-normal text-info"><strong>Rest Password</strong></h1>
 
 @if (session('status'))
 <div class="alert alert-success" role="alert">

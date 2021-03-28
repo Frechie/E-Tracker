@@ -23,7 +23,7 @@ body {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background: linear-gradient(rgba(149, 109, 172, 0.897), rgba(84, 46, 105, 0.87)), url("../admin/img/photo2.png") fixed center center;
+  background: linear-gradient(rgba(149, 109, 172, 0.897), rgba(84, 46, 105, 0.87)), url("../admin/img/login-bg.jpg") fixed center center;
   
 }
 
