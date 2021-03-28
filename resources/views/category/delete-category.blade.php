@@ -7,13 +7,14 @@
             <div class="card">
                 <div class="card-body bg-light">
                     <h4 class="card-title text-danger"> Warning!!!</h4>
+                    <br><hr>
                     <p class="card-description text-danger text-bold">
-                        By clicking the button below, you delete <strong>{{ $deleteCategory->category_name }}</strong> permanantly.
+                        Do you really want to delet <strong>&apos;{{ $deleteCategory->category_name }}&apos;</strong> permanantly.
                     </p>
                     <form class="" method="POST" action="{{ url('/categories') }}/{{ $deleteCategory->id }}">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-gradient-danger mr-2">Confirm Deletion</button>
+                        <button type="submit" class="btn btn-danger mr-2">Confirm Deletion</button>
                     </form>
                 </div>
             </div>

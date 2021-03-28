@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Categories\Category;
 use App\Models\Issues\Issue;
 use App\Models\Issues\Issue_Diary;
 use App\Models\Roles\Role;
@@ -45,8 +46,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function categories(){
-       return  $this->hasMany(Category::class, 'cat_created_by_uid');
+    public function getCategory(){
+       return  $this->hasMany(Category::class, 'cat_created_by_uid', 'id');
     }
 
     public function issues(){

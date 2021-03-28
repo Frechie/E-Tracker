@@ -6,7 +6,7 @@
     <div class="col-12 grid-margin">
 
       @if(session()->has('successMessage'))
-      <div class="alert alert-success text-white">
+      <div class="alert alert-success">
         <h5 class="text-success">{{ session()->get('successMessage') }}</h5>
       </div>
       @endif
@@ -42,7 +42,7 @@
               <a href="" class="btn btn-info text-white">Add Asset Class</a>
               @else
               <thead>
-                <tr class="row bg-dark text-white">
+                <tr class="row bg-info text-white">
                   <th class="text-center col-lg-3 col-sm-12"> Name </th>
                   <th class="text-center col-lg-5 col-sm-12"> Description </th>
                   <th class="text-center col-lg-2 col-sm-12"> Created By </th>
@@ -59,9 +59,9 @@
                   <td class="col-lg-5 text-wrap">
                     {{ $category->category_description }}
                   </td>
-                  <td class="col-lg-2">{{ $category->cat_created_by_uid}}
+                  <td class="col-lg-2">{{ $category->getUser->name}}
                   </td>
-                  <td class="col-lg-1"> {{ $category->created_at}}</td>
+                  <td class="col-lg-1"> {{ $category->created_at->format('D, d M Y')}}</td>
                   <td class="col-lg-1">
                     <a href="{{ url('/categories') }}/{{ $category->id }}/edit" class="col-lg-6">
                       <i class="icofont icofont-edit text-info"></i>

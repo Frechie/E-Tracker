@@ -47,7 +47,7 @@ class CategoriesController extends Controller
         $cat = Category::create([
             'category_name' => $request->input('cat_name'),
             'category_description' => $request->input('cat_desc'),
-            'cat_created_by_uid' => $request->user()->email
+            'cat_created_by_uid' => $request->user()->id
         ]);
 
         return redirect('categories')
