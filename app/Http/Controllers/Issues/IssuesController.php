@@ -8,7 +8,7 @@ use App\Models\Issues\Issue_Diary;
 
 use App\Models\Categories\Category;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Redirect;
 
 class IssuesController extends Controller {
 
@@ -122,7 +122,7 @@ class IssuesController extends Controller {
         if ($case_Diary) {
             $request->file('issue_upload')->storeAs('issues/'.$request->user()->name, $caseUploads);
         }
-        return redirect('/issues');
+        return Redirect::back()->with('message', 'Updated successfully!!!');
     }
 
     /**

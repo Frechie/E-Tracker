@@ -30,10 +30,21 @@
                 </li>
             </ul>
 
-        </nav>
-        <!-- /.navbar -->
+            <ul class="navbar-nav ">
+                <div class="">
+                    <span class="btn bg-green text-white d-block">
+                       <i class="icofont icofont-ui-user"></i> {{ Auth::user()->name  }}  
+                    </span>
+                </div>
+                <div class="" style="margin-left: 5px;">
+                    <span class="btn bg-green text-white d-block"> 
+                       <i class="icofont icofont-email"></i> {{ Auth::user()->email }} 
+                    </span>
+                </div>
+            </ul>
 
-        <!-- Main Sidebar Container -->
+        </nav>
+
         <aside class="main-sidebar sidebar-dark-purple elevation-4">
             <!-- Brand Logo -->
             <a href="https://seaicotechnologies.com/" class="brand-link text-center text-bold" target="_blank">
@@ -45,17 +56,6 @@
 
             <!-- Sidebar -->
             <div class="sidebar">
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <!-- <div class="image">
-                        <img src="{{ asset('assets/admin/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
-                    </div> -->
-                    <div class="info">
-                        <a href="{{ route('profile') }}" class="d-block">{{
-                            Auth::user()->name                          
-                            }}
-                        </a>
-                    </div>
-                </div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">

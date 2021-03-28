@@ -9,6 +9,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                @if(session()->has('message'))
+                <div class="alert alert-success" role="alert">
+                    <h5>{{ session()->get('message') }}</h5>
+                </div>
+                @endif
                 <!-- The time line -->
                 <div class="card">
                     <div class="card-body">
@@ -51,7 +56,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-12">
-                                    <button type="submit" class="btn bg-info w-100">Update Case</button>
+                                    <button type="submit" class="btn bg-primary w-100">Update Case</button>
                                 </div>
                             </div>
                         </form>
@@ -69,9 +74,9 @@
                                 {{ $issue_update->created_at->format('H:i:s') }}
                             </span>
                             <h3 class="timeline-header bg-secondary">
-                               Case-Update :
-                                 <i class="icofont icofont-long-arrow-right"></i> 
-                                 {{ $issue_update->created_at->format('D') }}, {{ $issue_update->created_at->format('M d Y') }}
+                                Case-Update :
+                                <i class="icofont icofont-long-arrow-right"></i>
+                                {{ $issue_update->created_at->format('D, d M Y') }}
                             </h3>
 
                             <div class="timeline-body">
@@ -79,8 +84,8 @@
                             </div>
                             <div class="timeline-footer">
                                 Atttached Files:
-                                <a class="text-blue" href="{{asset($issue_update->issue_uploads)}}" download="download">
-                                    {{$issue_update->issue_uploads}}
+                                <a class="text-blue" href="{{asset($issue_update->issue_uploads)}}" target="_blank" download>
+                                {{asset($issue_update->issue_uploads)}}
                                     <i class="icofont icofont-download text-primary"></i>
                                 </a>
                             </div>
@@ -109,7 +114,7 @@
                             </div>
                             <div class="timeline-footer">
                                 Atttached Files:
-                                <a class="text-blue" href="{{asset($issue->issue_uploads)}}" target="_blank">
+                                <a class="text-blue" href="{{asset($issue->issue_uploads)}}" target="_blank" download>
                                     {{ asset($issue->issue_uploads) }}
                                     <i class="icofont icofont-download text-primary"></i>
                                 </a>

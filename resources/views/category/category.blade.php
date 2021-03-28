@@ -6,17 +6,17 @@
     <div class="col-12 grid-margin">
 
       @if(session()->has('successMessage'))
-      <div class="alert alert-success">
+      <div class="alert alert-success" role="alert">
         <h5 class="text-success">{{ session()->get('successMessage') }}</h5>
       </div>
       @endif
       @if(session()->has('deletionMessage'))
-      <div class="alert alert-danger">
+      <div class="alert alert-danger" role="alert">
         <h5 class="text-danger">{{ session()->get('deletionMessage') }}</h5>
       </div>
       @endif
       @if(session()->has('newCategoryMessage'))
-      <div class="alert alert-info">
+      <div class="alert alert-info" role="alert">
         <h5 class="text-info">{{ session()->get('newCategoryMessage') }}</h5>
       </div>
       @endif
