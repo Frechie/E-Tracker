@@ -21,6 +21,6 @@ class Issue_Diary extends Model {
     ];
 
     public function getIssue() {
-        return $this->belongsTo(Issue::class, 'issue_id', 'issue_diary_id');
+        return $this->belongsTo(Issue::class, 'issue_id', 'id');
     }
 }

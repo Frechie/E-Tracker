@@ -22,23 +22,23 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white fixed-top navbar-light">
+        <nav class="main-header navbar navbar-expand navbar-white fixed-top bg-purple text-white">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link text-white" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
 
             <ul class="navbar-nav ">
                 <div class="">
-                    <span class="btn bg-green text-white d-block">
-                       <i class="icofont icofont-ui-user"></i> {{ Auth::user()->name  }}  
+                    <span class="">
+                        <i class="icofont icofont-ui-user"></i> {{ Auth::user()->name  }}
                     </span>
                 </div>
                 <div class="" style="margin-left: 5px;">
-                    <span class="btn bg-green text-white d-block"> 
-                       <i class="icofont icofont-email"></i> {{ Auth::user()->email }} 
+                    <span class="">
+                        <i class="icofont icofont-email"></i> {{ Auth::user()->email }}
                     </span>
                 </div>
             </ul>
@@ -69,6 +69,50 @@
 
                             </a>
                         </li>
+                        <li class="nav-item has-treeview">
+                            <a href="" class="nav-link">
+                                <div class="icon">
+                                    <i class="nav-icon icofont-bag-alt text-white"></i>
+                                    <p>Asset Classes</p>
+
+                                </div>
+                                <i class="fas fa-angle-left right"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('/categories') }}" class="nav-link">
+                                        <i class="nav-icon icofont-hard-disk text-white"></i>
+                                        <p>Categories</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('/categories/create') }}" class="nav-link">
+                                        <i class="nav-icon icofont-plus-circle text-white"></i>
+                                        <p>New Category</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="nav-icon icofont-database"></i>
+                                        <p>Sub-Categories</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="nav-icon icofont-plus-square"></i>
+                                        <p>New Sub-Category</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="nav-icon icofont-chart-histogram"></i>
+                                <p>Reports </p>
+                            </a>
+                        </li>
+
                         <li class="nav-item has-treeview">
                             <a href="" class="nav-link">
                                 <div class="icon">
@@ -111,12 +155,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="nav-icon icofont-chart-histogram"></i>
-                                <p>Reports </p>
-                            </a>
-                        </li>
+
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">

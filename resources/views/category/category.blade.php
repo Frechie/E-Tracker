@@ -7,17 +7,17 @@
 
       @if(session()->has('successMessage'))
       <div class="alert alert-success" role="alert">
-        <h5 class="text-success">{{ session()->get('successMessage') }}</h5>
+        <h5 class="">{{ session()->get('successMessage') }}</h5>
       </div>
       @endif
       @if(session()->has('deletionMessage'))
       <div class="alert alert-danger" role="alert">
-        <h5 class="text-danger">{{ session()->get('deletionMessage') }}</h5>
+        <h5 class="">{{ session()->get('deletionMessage') }}</h5>
       </div>
       @endif
       @if(session()->has('newCategoryMessage'))
       <div class="alert alert-info" role="alert">
-        <h5 class="text-info">{{ session()->get('newCategoryMessage') }}</h5>
+        <h5 class="">{{ session()->get('newCategoryMessage') }}</h5>
       </div>
       @endif
 
@@ -26,12 +26,6 @@
           <div class="row">
             <div class="col-md-9 col-sm-12">
               <h5 class="card-title text-info">Module/Asset Classification</h5>
-            </div>
-            <div class="col-md-3 col-sm-12">
-              <a href="{{ url('/categories/create') }}" class="btn btn-success btn-fw">
-                New Classes
-                <small><i class="mdi mdi-border-color"></i></small>
-              </a>
             </div>
           </div>
           <hr>

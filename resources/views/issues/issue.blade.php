@@ -17,7 +17,7 @@
                 <!-- The time line -->
                 <div class="card">
                     <div class="card-body">
-                        <div class="card-header bg-info">
+                        <div class="card-header bg-purple text-white">
                             <h6 class="card-description text-white">
                                 {{ $issue->issue_subject }}
                             </h6>
@@ -56,7 +56,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-12">
-                                    <button type="submit" class="btn bg-primary w-100">Update Case</button>
+                                    <button type="submit" class="btn bg-purple text-white w-100">Update Case</button>
                                 </div>
                             </div>
                         </form>
@@ -67,16 +67,15 @@
                 @foreach($issue_updates as $issue_update)
                 <div class="timeline" style="margin-top: 15px;">
                     <div>
-                        <i class="fas fa-envelope bg-secondary"></i>
+                        <i class="fas fa-envelope bg-dark text-white"></i>
                         <div class="timeline-item">
-                            <span class="time bg-secondary">
+                            <span class="time bg-dark text-white">
                                 <i class="fas fa-clock"></i>
                                 {{ $issue_update->created_at->format('H:i:s') }}
                             </span>
-                            <h3 class="timeline-header bg-secondary">
-                                Case-Update :
-                                <i class="icofont icofont-long-arrow-right"></i>
-                                {{ $issue_update->created_at->format('D, d M Y') }}
+                            <h3 class="timeline-header bg-dark text-white">
+                            {{ $issue_update->getIssue->getUser->name }} wrote on                               
+                            {{ $issue_update->created_at->format('D, d M Y') }}
                             </h3>
 
                             <div class="timeline-body">
