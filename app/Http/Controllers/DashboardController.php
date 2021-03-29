@@ -27,9 +27,9 @@ class DashboardController extends Controller
         $allIssues = Issue::all();
 
         $new_issues = $allIssues->where('issue_status', 'NEW')->count();
-        $countCompletedIssues = $allIssues->where('issue_status', 'COMPLETED')->count();
-        $countOutstandingIssues = $allIssues->where('issue_status', 'IN-PROGRESS')->count();
-        $pendingHDIssues = $allIssues->where('issue_status', 'PENDING-HD')->count();
+        $countCompletedIssues = $allIssues->where('issue_status', 'Resolved')->count();
+        $countOutstandingIssues = $allIssues->where('issue_status', 'Work-in-Progress')->count();
+        $pendingHDIssues = $allIssues->where('issue_status', 'Pending-Hd')->count();
         //$countAllIssues = $allIssues->count();
 
         return view('home')->with([
