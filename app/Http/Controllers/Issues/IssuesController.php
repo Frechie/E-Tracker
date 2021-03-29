@@ -51,14 +51,15 @@ class IssuesController extends Controller {
         }
 
         $issue = Issue::create([
+            'issue_subject' => $request->input('issue_subject'),
             'issue_description' => $request->input('issue_desc'),
+            'issue_raised_by_uid' => $request->user()->id,
             'issue_category'  => $request->input('asset_class'),
             'issue_sub_category'  => $request->input('issue_cat'),
             'severity'  => $request->input('issue_severity'),
-            'issue_uploads'  => 'storage/issues/'.$request->user()->name.'/'.$filenameToStore,
-            'issue_raised_by_uid' => $request->user()->id,
             'issue_status' => 'NEW',
-            'issue_subject' => $request->input('issue_subject')
+            'issue_uploads'  => 'storage/issues/'.$request->user()->name.'/'.$filenameToStore,            
+            'client_id' => 1
         ]);
 
         if ($issue) {
@@ -110,6 +111,10 @@ class IssuesController extends Controller {
 
        // return 'FrechieTest/'.$caseUploads;
 
+       $issueStatusUpdate = Issue::findOrFail($issue->id);
+       $issueStatusUpdate->issue_status = $request->issue_status;
+       $issueStatusUpdate->save();
+
         $case_Diary = Issue_Diary::create([
             'issue_id' => $issue->id,
             'client_id' => $issue->id,
@@ -119,10 +124,14 @@ class IssuesController extends Controller {
             'issue_uploads' => 'storage/issues/'.$request->user()->name.'/'.$caseUploads
         ]);
 
-        if ($case_Diary) {
-            $request->file('issue_upload')->storeAs('issues/'.$request->user()->name, $caseUploads);
+        if (!$case_Diary) {
+           return 404; 
         }
-        return Redirect::back()->with('message', 'Updated successfully!!!');
+        else{
+            $request->file('issue_upload')->storeAs('issues/'.$request->user()->name, $caseUploads);
+            return Redirect::back()->with('message', 'Updated successfully!!!');
+        }
+       
     }
 
     /**

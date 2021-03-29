@@ -56,7 +56,7 @@
                   </td>
                   <td class="col-lg-1"> {{ $client->created_at->format('D, d M Y')}}</td>
                   <td class="col-lg-1">
-                    <a href="{{ url('/clients') }}/edit/{{ $client->client_id }}" class="col-lg-6">
+                    <a href="{{ url('/clients') }}/{{ $client->client_id }}/edit/" class="col-lg-6">
                       <i class="icofont icofont-edit text-info"></i>
                     </a>
                     <a class="col-lg-6" href="{{ url('/clients') }}/{{ $client->id }}">

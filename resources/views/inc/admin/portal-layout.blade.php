@@ -109,7 +109,7 @@
                         <li class="nav-item has-treeview">
                             <a href="" class="nav-link">
                                 <div class="icon">
-                                    <i class="nav-icon icofont-bag-alt text-white"></i>
+                                    <i class="nav-icon icofont icofont-users-alt-3 text-white"></i>
                                     <p>Clients</p>
 
                                 </div>
@@ -118,8 +118,8 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{ url('/clients') }}" class="nav-link">
-                                        <i class="nav-icon icofont-hard-disk text-white"></i>
-                                        <p>All Clients</p>
+                                        <i class="nav-icon icofont icofont-users text-white"></i>
+                                        <p>Clients</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">

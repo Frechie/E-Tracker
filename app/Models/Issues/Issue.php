@@ -17,7 +17,8 @@ class Issue extends Model {
         'issue_sub_category',
         'issue_status',
         'issue_uploads',
-        'severity'
+        'severity',
+        'client_id'
     ];
 
     public function getUser(){

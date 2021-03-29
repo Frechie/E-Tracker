@@ -64,6 +64,9 @@ class ClientController extends Controller {
      */
     public function show(Client $client)  {
         //
+        $client = Client::findOrFail($client->client_id);
+
+        return view('client.edit-client')->with('client', $client);
     }
 
     /**
@@ -74,6 +77,9 @@ class ClientController extends Controller {
      */
     public function edit(Client $client)  {
         //
+        $client = Client::findorFail($client->client_id);
+
+        return view('client.edit-client')->with('client', $client);
     }
 
     /**
