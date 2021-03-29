@@ -16,7 +16,7 @@ class Client extends Model {
         'support_type_id'
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class, 'client_id');
+    public function getClientSupportStaff(){
+        return $this->belongsTo(User::class, 'client_id', 'id');
     }
 }

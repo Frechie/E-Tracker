@@ -11,10 +11,12 @@ class CreateClientsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('clients', function (Blueprint $table) {
-            $table->id();
+            $table->id('client_id');
+            $table->string('support_type_id');
+            $table->string('client_name');
+            $table->mediumText('client_description');
             $table->timestamps();
         });
     }

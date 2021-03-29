@@ -22,7 +22,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white fixed-top bg-purple text-white">
+        <nav class="main-header navbar navbar-expand fixed-top bg-purple text-white">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -47,7 +47,7 @@
 
         <aside class="main-sidebar sidebar-dark-purple elevation-4">
             <!-- Brand Logo -->
-            <a href="https://seaicotechnologies.com/" class="brand-link text-center text-bold" target="_blank">
+            <a href="https://seaicotechnologies.com/" class="brand-link bg-purple text-white text-center" target="_blank">
                 <div class="icon">
                     <i class="nav-icon icofont-home text-white"></i>
                     SEAICO TECHNOLOGIES
