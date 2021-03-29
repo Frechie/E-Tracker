@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\SupportClient\Client;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -26,9 +27,12 @@ class UserController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create()     {
+        //Display Add New User Form
+        $client =  Client::all();
+
+        return view('users.add-user')->with('clients', $client);
+
     }
 
     /**
