@@ -6,7 +6,7 @@ use App\Models\Categories\Category;
 use App\Models\Issues\Issue;
 use App\Models\Issues\Issue_Diary;
 use App\Models\Roles\Role;
-
+use App\Models\SupportClient\Client;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -63,6 +63,6 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function getClientName(){     
-            return $this->hasMany(User::class, 'client_id', 'id');
+            return $this->hasMany(Client::class, 'client_id', 'id');
     }
 }

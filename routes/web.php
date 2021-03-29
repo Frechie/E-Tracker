@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\User\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Category\CategoriesController;
@@ -39,3 +40,5 @@ Route::resource('categories', CategoriesController::class);
 Route::resource('sub-category', SubCategoryController::class);
 
 Route::resource('issues', IssuesController::class);
+
+Route::resource('users', UserController::class);

@@ -23,7 +23,7 @@
                     <div class="inner">
                         <h3>{{ $new_issues }}</h3>
 
-                        <p>New Issues</p>
+                        <p>NEW ISSUES</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
@@ -34,26 +34,27 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-warning">
+                <div class="small-box bg-purple text-white">
                     <div class="inner">
-                        <h3>{{ $issues_in_progress }}<sup style="font-size: 20px"></sup></h3>
+                        <h3>{{ $issues_in_progress }}</h3>
 
-                        <p>In-Progress</p>
+                        <p>WORK-IN-PROGRESS </p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
+                        <i class="ion ion-bag"></i>
                     </div>
                     <a href="{{ url('/dashboard/Work-in-Progress') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <!-- ./col -->
+
+           
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-danger">
+                <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>{{ $pendingHDIssues }}</h3>
 
-                        <p>Pending HD</p>
+                        <p>PENDING HD</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -68,7 +69,7 @@
                     <div class="inner">
                         <h3>{{ $completedIssues }}</h3>
 
-                        <p>Completed</p>
+                        <p>COMPLETED</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>

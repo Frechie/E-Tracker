@@ -185,7 +185,7 @@
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <div class="icon">
-                                    <i class="nav-icon icofont-ui-user-group text-white"></i>
+                                    <i class="nav-icon icofont-address-book text-white"></i>
                                     <p>
                                         Manage Users
                                     </p>
@@ -194,17 +194,17 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href="{{ url('/users') }}" class="nav-link">
                                         <div class="icon">
-                                            <i class="nav-icon icofont-user"></i>
+                                            <i class="nav-icon icofont-search-user"></i>
                                             <p>Users</p>
                                         </div>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="nav-icon icofont-folder-open text-white"></i>
-                                        <p>Roles</p>
+                                    <a href="{{ url('users/create') }}" class="nav-link">
+                                        <i class="nav-icon icofont-user text-white"></i>
+                                        <p>Create User</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">

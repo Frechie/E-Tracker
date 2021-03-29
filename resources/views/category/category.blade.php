@@ -30,7 +30,7 @@
           </div>
           <hr>
           <div class="table-responsive">
-            <table class="table table-striped ">
+            <table class="table table-striped table-bordered">
               @if( $cat_model->count() === 0 )
               <h4 class="text-danger">Data not available!!</h4>
               <a href="" class="btn btn-info text-white">Add Asset Class</a>
