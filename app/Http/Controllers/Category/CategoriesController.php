@@ -9,8 +9,7 @@ use Illuminate\Http\Request;
 class CategoriesController extends Controller
 {
 
-    public function __construct()
-    {
+    public function __construct()  {
         $this->middleware(['auth', 'verified']);
     }
 
@@ -19,8 +18,7 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         $category = Category::all();
 
         return view('category.category')->with('cat_model', $category);
@@ -31,8 +29,7 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         return view('category.add-category');
     }
 
@@ -43,15 +40,14 @@ class CategoriesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-
         $cat = Category::create([
             'category_name' => $request->input('cat_name'),
             'category_description' => $request->input('cat_desc'),
             'cat_created_by_uid' => $request->user()->id
         ]);
 
-        return redirect('categories')
-            ->with('newCategoryMessage', 'Successfully created ' . $request->input('cat_name') . ' Category!!!');
+        return redirect('categories') 
+                       ->with('newCategoryMessage', 'Successfully created ' . $request->input('cat_name') . ' Category!!!');
         //
     }
 
@@ -61,8 +57,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id){
 
         $data = Category::find($id);
 
@@ -108,12 +103,12 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $catTodelete = Category::find($id);
+    public function destroy($id)  {
 
+        $catTodelete = Category::find($id);
         $catTodelete->delete();
 
-        return redirect('categories')->with('deletionMessage', 'Successfully deleted ' . $catTodelete->category_name);
+        return redirect('categories')
+                    ->with('deletionMessage', 'Successfully deleted ' . $catTodelete->category_name);
     }
 }

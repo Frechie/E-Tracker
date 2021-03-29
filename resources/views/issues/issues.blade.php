@@ -13,7 +13,7 @@
                     <h2 class="card-title text-bold">All Cases</h2>
                     <div class="table-responsive">
                         <table class="table table-hover table-striped">
-                            <thead class="bg-blue text-white">
+                            <thead class="bg-info text-white">
                                 <tr>
                                     <th> Case-ID </th>
                                     <th> Created By </th>

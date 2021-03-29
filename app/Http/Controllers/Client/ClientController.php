@@ -23,7 +23,7 @@ class ClientController extends Controller {
 
         $clients = Client::all();
 
-        return $clients;
+        return view('client.client')->with('clients', $clients);
     }
 
     /**
@@ -32,6 +32,7 @@ class ClientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create()  {
+        return view('client.add-client');
         //
     }
 
@@ -43,6 +44,16 @@ class ClientController extends Controller {
      */
     public function store(Request $request) {
         //
+        $client = Client::create([
+            'support_type_id' => 1,
+            'client_name' => $request->input('client_name'),
+            'client_description' => $request->input('client_desc')            
+        ]);
+
+        return redirect('clients') 
+                       ->with('createClientMessage', 'Successfully created ' . $request->input('client_name') . '!!!');
+        //
+
     }
 
     /**

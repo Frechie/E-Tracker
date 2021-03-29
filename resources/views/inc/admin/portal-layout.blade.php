@@ -106,6 +106,32 @@
                             </ul>
                         </li>
 
+                        <li class="nav-item has-treeview">
+                            <a href="" class="nav-link">
+                                <div class="icon">
+                                    <i class="nav-icon icofont-bag-alt text-white"></i>
+                                    <p>Clients</p>
+
+                                </div>
+                                <i class="fas fa-angle-left right"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('/clients') }}" class="nav-link">
+                                        <i class="nav-icon icofont-hard-disk text-white"></i>
+                                        <p>All Clients</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('/clients/create') }}" class="nav-link">
+                                        <i class="nav-icon icofont-plus-circle text-white"></i>
+                                        <p>New Clients</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
                         <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="nav-icon icofont-chart-histogram"></i>
