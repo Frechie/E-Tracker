@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Category\CategoriesController;
+use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Category\SubCategoryController;
 use App\Http\Controllers\Issues\IssuesController;
 use Illuminate\Http\Request;
@@ -31,6 +32,7 @@ Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'inde
 
 Route::get('/profile', [App\Http\Controllers\Profile\ProfileController::class, 'showProfile'])->name('profile');
 
+Route::resource('clients', ClientController::class);
 
 Route::resource('categories', CategoriesController::class);
 

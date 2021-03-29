@@ -6,7 +6,7 @@
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body bg-light">
-                    <h4 class="card-title"> Create New Assest Classes</h4>
+                    <h4 class="card-title"> Create New Assest Classes</h4><br>
                     <p class="card-description"> Ensure the class is well known by adding description</p>
                     <form class="" method="POST" action="{{ url('/categories') }}">
                         @csrf

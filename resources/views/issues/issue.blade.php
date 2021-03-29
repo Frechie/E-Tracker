@@ -74,8 +74,8 @@
                                 {{ $issue_update->created_at->format('H:i:s') }}
                             </span>
                             <h3 class="timeline-header bg-dark text-white">
-                            {{ $issue_update->getIssue->getUser->name }} wrote on                               
-                            {{ $issue_update->created_at->format('D, d M Y') }}
+                                {{ $issue_update->getIssue->getUser->name }} wrote on
+                                {{ $issue_update->created_at->format('D, d M Y') }}
                             </h3>
 
                             <div class="timeline-body">
@@ -84,7 +84,7 @@
                             <div class="timeline-footer">
                                 Atttached Files:
                                 <a class="text-blue" href="{{asset($issue_update->issue_uploads)}}" target="_blank" download>
-                                {{asset($issue_update->issue_uploads)}}
+                                    {{asset($issue_update->issue_uploads)}}
                                     <i class="icofont icofont-download text-primary"></i>
                                 </a>
                             </div>
@@ -94,8 +94,6 @@
                 </div>
                 @endforeach
                 <!--End of the Issues Updates -->
-
-
                 <div class="timeline" style="margin-top: 15px;">
                     <div>
                         <i class="fas fa-envelope bg-info"></i>
