@@ -34,27 +34,23 @@
               @if( $users->count() === 0 )
               <h4 class="text-danger">Data not available!!</h4>
               @else
-              <thead>
-                <tr class="row bg-info text-white">
-                  <th class="text-center col-md-3"> Name </th>
-                  <th class="text-center col-md-3"> Email </th>
-                  <th class="text-center col-md-2"> User Type </th>
-                  <th class="text-center col-md-2"> Date</th>
-                  <th class="text-center col-md-2"> Action</th>
+              <thead class="bg-info text-white text-center">
+                <tr>
+                  <th> Name </th>
+                  <th> Email </th>
+                  <th> User Type </th>
+                  <th> Date</th>
+                  <th> Action</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach($users as $user)
-                <tr class="row">
-                  <td class="col-md-3 col-sm-3">
-                    {{ $user->name }}
-                  </td>
-                  <td class="col-md-3 text-wrap">
-                    {{ $user->email }}
-                  </td>
-                  <td class="col-md-2"> {{ $user->id}} </td>
-                  <td class="col-md-2"> {{ $user->created_at->format('D, d M Y') }}</td>
-                  <td class="col-md-2">
+                <tr>
+                  <td> {{ $user->name }} </td>
+                  <td class="text-wrap"> {{ $user->email }} </td>
+                  <td> {{ $user->id}} </td>
+                  <td> {{ $user->created_at->format('D, d M Y') }}</td>
+                  <td>
                     <div class="row">
                       <a href="{{ url('/users') }}/{{ $user->id }}/edit/" class="col-md-4">
                         <i class="icofont icofont-edit text-info"></i>
@@ -63,12 +59,13 @@
                         <i class="icofont icofont-ui-delete text-danger"></i>
                       </a>
                       <a class="col-md-4" href="{{ url('/users') }}/{{ $user->id }}">
-                        <i class="icofont icofont-ui-delete text-danger"></i>
+                        <i class="icofont icofont-search-document text-info"></i>
                       </a>
                     </div>
                   </td>
-                  @endforeach
-                  @endif
+                </tr>
+                @endforeach
+                @endif
               </tbody>
             </table>
           </div>

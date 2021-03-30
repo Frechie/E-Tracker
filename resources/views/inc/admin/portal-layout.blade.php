@@ -48,7 +48,7 @@
         <aside class="main-sidebar sidebar-dark-purple elevation-4">
             <!-- Brand Logo -->
             <a href="https://seaicotechnologies.com/" class="brand-link bg-purple text-white text-center" target="_blank">
-                <div class="icon">
+                <div class="icon brand-name">
                     <i class="nav-icon icofont-home text-white"></i>
                     SEAICO TECHNOLOGIES
                 </div>

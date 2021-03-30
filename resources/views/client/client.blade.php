@@ -34,10 +34,10 @@
               @if( $clients->count() === 0 )
               <h4 class="text-danger">Data not available!!</h4>
               @else
-              <thead>
-                <tr class="row bg-info text-white">
-                  <th class="text-center col-md-2"> Name </th>
-                  <th class="text-center col-md-4"> Description </th>
+              <thead class="bg-info text-white">
+                <tr>
+                  <th> Name </th>
+                  <th> Description </th>
                   <th class="text-center col-md-2"> Created By </th>
                   <th class="text-center col-md-2"> Date</th>
                   <th class="text-center col-md-2"> Action</th>
@@ -45,16 +45,12 @@
               </thead>
               <tbody>
                 @foreach($clients as $client)
-                <tr class="row">
-                  <td class="col-lg-2 col-sm-3">
-                    {{ $client->client_name }}
-                  </td>
-                  <td class="col-lg-4 text-wrap">
-                    {{ $client->client_description }}
-                  </td>
-                  <td class="col-lg-2"> </td>
-                  <td class="col-lg-2"> {{ $client->created_at->format('D, d M Y')}}</td>
-                  <td class="col-lg-2">
+                <tr>
+                  <td> {{ $client->client_name }} </td>
+                  <td> {{ $client->client_description }} </td>
+                  <td> </td>
+                  <td> {{ $client->created_at->format('D, d M Y')}}</td>
+                  <td>
                     <div class="row text-center">
                       <a href="{{ url('/clients') }}/{{ $client->client_id }}/edit/" class="col-lg-6">
                         <i class="icofont icofont-edit text-info"></i>
@@ -64,8 +60,9 @@
                       </a>
                     </div>
                   </td>
-                  @endforeach
-                  @endif
+                </tr>
+                @endforeach
+                @endif
               </tbody>
             </table>
           </div>

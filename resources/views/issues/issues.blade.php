@@ -27,15 +27,10 @@
                                 @foreach($issuesRecords as $issue)
                                 <tr>
                                     <td><a href="{{ url('/issues') }}/{{$issue->id }}"> {{ $issue->id}}</a> </td>
-                                    <td>
-                                        {{ $issue->getUser->name}}
-                                    </td>
+                                    <td> {{ $issue->getUser->name}} </td>
                                     <td> {{ $issue->issue_subject }}</td>
-                                    <td>
-                                        <label class="badge bg-info">{{ $issue->issue_status}}</label>
-                                    </td>
+                                    <td> {{ $issue->issue_status}} </td>
                                     <td> {{$issue->created_at->format('M - d - Y') }} </td>
-
                                 </tr>
                                 @endforeach
                             </tbody>

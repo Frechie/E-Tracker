@@ -33,37 +33,35 @@
             <table class="table table-striped table-bordered">
               @if( $cat_model->count() === 0 )
               <h4 class="text-danger">Data not available!!</h4>
-              <a href="" class="btn btn-info text-white">Add Asset Class</a>
               @else
-              <thead>
-                <tr class="row bg-info text-white">
-                  <th class="text-center col-lg-3 col-sm-12"> Name </th>
-                  <th class="text-center col-lg-5 col-sm-12"> Description </th>
-                  <th class="text-center col-lg-2 col-sm-12"> Created By </th>
-                  <th class="text-center col-lg-1 col-sm-12"> Date</th>
-                  <th class="text-center col-lg-1 col-sm-12"> Action</th>
+
+              <thead class="bg-info text-white text-center">
+                <tr>
+                  <th class=""> Name </th>
+                  <th class=""> Description </th>
+                  <th class=""> Created By </th>
+                  <th class=""> Date</th>
+                  <th class=""> Action</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach($cat_model as $category)
-                <tr class="row">
-                  <td class="col-lg-3 col-sm-12">
-                    {{ $category->category_name }}
+                <tr>
+                  <td> {{ $category->category_name }} </td>
+                  <td class="text-wrap"> {{ $category->category_description }} </td>
+                  <td class="">{{ $category->getUser->name}} </td>
+                  <td class=""> {{ $category->created_at->format('D, d M Y')}}</td>
+                  <td class="">
+                    <div class="row text-center">
+                      <a href="{{ url('/categories') }}/{{ $category->id }}/edit" class="col-md-6">
+                        <i class="icofont icofont-edit text-info"></i>
+                      </a>
+                      <a class="col-md-6" href="{{ url('/categories') }}/{{ $category->id }}">
+                        <i class="icofont icofont-ui-delete text-danger"></i>
+                      </a>
+                    </div>
                   </td>
-                  <td class="col-lg-5 text-wrap">
-                    {{ $category->category_description }}
-                  </td>
-                  <td class="col-lg-2">{{ $category->getUser->name}}
-                  </td>
-                  <td class="col-lg-1"> {{ $category->created_at->format('D, d M Y')}}</td>
-                  <td class="col-lg-1">
-                    <a href="{{ url('/categories') }}/{{ $category->id }}/edit" class="col-lg-6">
-                      <i class="icofont icofont-edit text-info"></i>
-                    </a>
-                    <a class="col-lg-6" href="{{ url('/categories') }}/{{ $category->id }}">
-                      <i class="icofont icofont-ui-delete text-danger"></i>
-                    </a>
-                  </td>
+                </tr>
                   @endforeach
                   @endif
               </tbody>

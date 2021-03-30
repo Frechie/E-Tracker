@@ -18,6 +18,10 @@ body {
   
 }
 
+.brand-name{
+  font-size: 0.8rem !important;
+}
+
 body {
   display: flex;
   align-items: center;
