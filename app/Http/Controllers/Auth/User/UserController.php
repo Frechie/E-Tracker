@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\SupportClient\Client;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller {
     /**
@@ -41,9 +42,17 @@ class UserController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request)    {
         //
+        $userDetails = User::create([
+            'name' => $request->user_name,
+            'email' => $request->email,
+            'email_verified_at' => NULL,
+            'password' => Hash::make('Password@123')
+
+        ]);
+
+        return $request->all();
     }
 
     /**

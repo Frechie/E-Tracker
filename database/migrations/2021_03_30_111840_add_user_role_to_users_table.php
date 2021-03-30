@@ -4,16 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddClientIdColumnToIssueTable extends Migration {
+class AddUserRoleToUsersTable extends Migration
+{
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::table('issues', function (Blueprint $table) {
-            //adding column role_id to user table
-            $table->integer('client_id');
+        Schema::table('users', function (Blueprint $table) {
+            //
+            $table->string('user_role');
         });
     }
 
@@ -22,8 +23,8 @@ class AddClientIdColumnToIssueTable extends Migration {
      *
      * @return void
      */
-    public function down()  {
-        Schema::table('issues', function (Blueprint $table) {
+    public function down() {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
